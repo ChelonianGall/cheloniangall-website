@@ -1,0 +1,9 @@
+converse-chats {
+
+    margin-bottom: 25px;
+}
+
+a[class~="logout"] {
+
+    visibility: hidden !important;
+}

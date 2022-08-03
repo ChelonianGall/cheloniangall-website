@@ -1,0 +1,36 @@
+#home {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 20px;
+    padding: 20px;
+    width: fit-content;
+    border: 1px #f2bb13 solid;
+    background-color: #252e38;
+}
+
+#turtle {
+
+    border-radius: 50%;
+    border: 5px #f2bb13 solid;
+}
+
+#about {
+
+    width: 500px;
+    margin-left: 20px;
+}
+
+#about h2 {
+
+    color: #f2bb13;
+}
+
+#about a {
+
+    color: #f2bb13;
+    text-decoration: none;
+}
