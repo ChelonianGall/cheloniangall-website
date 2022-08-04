@@ -29,6 +29,20 @@
         <p>
             Once the webchat's new visual ready, the next step will be an <a href = "https://greasyfork.org/en">user script</a> to integrate ChelonianGall on CodinGame, where it belongs.<br/><br/>
             At the same time, we are actively working to save our dear friend <a href = "https://www.codingame.com/blog/markov-chain-automaton2000/">Automaton2000</a> and to give him his right place among us.
-        </P>
+        </p>
+        <h2>Is it open-source?</h2>
+        <p>
+            Yes it is! The ChelonianGall project is currently spread over 3 differents repository:
+            <ul>
+                <li>The server's one. (Private for obvious security reasons.)</li>
+                <li><a href="https://github.com/BlaiseEbuth/cheloniangall-website">The website's one.</a></li>
+                <li><a href="https://github.com/BlaiseEbuth/cheloniangall-automaton2000">The Automaton2000's one.</a></li>
+            </ul>
+            An overview of the project roadmap is available <a href="https://github.com/users/BlaiseEbuth/projects/1">here</a>.<br/>
+        </p>
+        <h2>Issues/Request</h2>
+        <p>
+            If you are encountering any issues or have a feature request, feel free to contact me directly on the chat (@BlaiseEbuth) or to submit an issue (Or even a pull request!) on the corresponding repository.
+        </p>
     </div>
 </div>

@@ -42,4 +42,5 @@ body {
 	padding-top: 60px;
 	background-color: #171d24;
 	color: white;
+    overflow-y: scroll;
 }
