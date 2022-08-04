@@ -16,12 +16,599 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 **/
 
-converse-chats {
+#chat-container {
 
-    margin-bottom: 25px;
+    --chat-status-online: rgb(12, 213, 63);
+    --chat-status-busy: rgb(213, 37, 37);
+    --chat-status-away: rgb(224, 134, 37);
+    --subdued-color: rgb(69, 76, 85);
+
+    position: fixed;
+    right: 0;
+    top: 60px;
+    bottom: 40px;
+    width: 300px;
+    padding: 10px;
+    background-color: #252e38;
+    border-top: 1px #171d24 solid;
+    border-bottom: 1px #171d24 solid;
+    color: white;
+}
+
+.hidden, .collapsed {
+
+    display: none;
+}
+
+converse-root, converse-chats, converse-controlbox {
+
+    display: block;
+    height: 100%;
+}
+
+converse-controlbox .flyout {
+
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.chat-head {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.controlbox-panes {
+
+    display: block;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+converse-controlbox-toggle {
+
+    display: block;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+converse-controlbox-toggle a {
+
+    display: block;
+    padding: 5px 10px 5px 10px;
+	border: none;
+	color: #454c55;
+	background-color: rgba(242, 187, 19, 1);
+	font-weight: bold;
+	cursor: pointer;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+converse-controlbox-toggle a:hover {
+
+	background-color: rgba(242, 187, 19, 0.9);
+}
+
+converse-controlbox .close-chatbox-button {
+
+    display: block;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    color: #454c55;
+    background-color: rgba(242, 187, 19, 1);
+    font-weight: bold;
+	cursor: pointer;
+    text-transform: uppercase;
+    font-size: 20px;
+    text-align: center;
+}
+
+converse-controlbox .close-chatbox-button:hover {
+
+	background-color: rgba(242, 187, 19, 0.9);
+}
+
+converse-controlbox .close-chatbox-button::before {
+
+    content: "x";
+}
+
+converse-user-profile .userinfo .xmpp-status{
+
+    text-align: center;
+}
+
+converse-user-profile .userinfo .xmpp-status .change-status{
+
+    cursor: pointer;
+}
+
+converse-user-profile .userinfo .profile {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+converse-user-profile .userinfo .profile .show-profile svg.avatar {
+
+    border: 1px rgba(242, 187, 19, 0) solid;
+}
+
+converse-user-profile .userinfo .profile .show-profile svg.avatar:hover {
+
+    border: 1px rgba(242, 187, 19, 0.9) solid;
+}
+
+converse-user-profile .userinfo .profile .username {
+
+    flex-grow: 2;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: 5px;
+    color: rgba(242, 187, 19, 1);
+	text-transform: uppercase;
+}
+
+converse-user-profile .userinfo .profile .show-client-info {
+
+    cursor: pointer;
+}
+
+converse-user-profile .userinfo .profile .show-client-info svg {
+
+    fill: white;
+}
+
+converse-user-profile .userinfo .profile .show-client-info svg:hover {
+
+    fill: rgba(242, 187, 19, 0.9);
 }
 
 a[class~="logout"] {
 
+    display: none;
     visibility: hidden !important;
 }
+
+converse-headlines-panel {
+
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+}
+
+converse-headlines-panel #headline {
+
+    text-transform: uppercase;
+    color: rgba(242, 187, 19, 1);
+}
+
+converse-headlines-panel .list-item a {
+
+    text-decoration: none;
+    animation: 0.3s infinite blink;
+}
+
+@keyframes blink {
+    
+    from {color: red;}
+    to {color: white;}
+}
+
+#chatrooms {
+
+    display: block;
+    margin-top: 10px;
+}
+
+#chatrooms converse-rooms-list,
+#chatrooms converse-bookmarks {
+
+    display: block;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+#chatrooms converse-rooms-list>.controlbox-padded {
+
+    display: flex;
+    margin-bottom: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+#chatrooms converse-rooms-list>.controlbox-padded span {
+
+    margin-right: 10px;
+    text-transform: uppercase;
+    color: rgba(242, 187, 19, 1);
+}
+
+#chatrooms converse-rooms-list>.controlbox-padded .show-list-muc-modal {
+
+    padding-top: 2px;
+    fill: white;
+    cursor: pointer;
+}
+
+#chatrooms converse-rooms-list>.controlbox-padded .show-list-muc-modal:hover {
+
+    fill: rgba(242, 187, 19, 0.9);
+}
+
+#chatrooms converse-rooms-list>.controlbox-padded .show-add-muc-modal {
+
+    display: none;
+}
+
+.list-container--openrooms,
+.list-container--bookmarks {
+
+    padding: 5px;
+    background-color: rgba(255,255, 255, 0.08);
+}
+
+.list-container--openrooms .open-rooms-toggle,
+.list-container--bookmarks .bookmarks-toggle {
+    
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.list-container--openrooms .open-rooms-toggle:hover,
+.list-container--bookmarks .bookmarks-toggle:hover {
+
+    color: rgba(242, 187, 19, 1);
+}
+
+.list-container--openrooms .open-rooms-toggle span::before,
+.list-container--bookmarks .bookmarks-toggle span::before {
+
+    font-weight: bold;
+}
+
+.list-container--openrooms .open-rooms-toggle .fa-caret-down::before,
+.list-container--bookmarks .bookmarks-toggle .fa-caret-down::before {
+
+    content: "\1401";
+}
+
+.list-container--openrooms .open-rooms-toggle .fa-caret-right::before,
+.list-container--bookmarks .bookmarks-toggle .fa-caret-right::before {
+
+    content: "\1405";
+}
+
+.list-container--openrooms .open-rooms-list .available-chatroom,
+.list-container--bookmarks .rooms-list .available-chatroom {
+
+    display: flex;
+    padding: 5px;
+    text-transform: lowercase;
+    cursor: pointer;
+}
+
+.list-container--openrooms .open-rooms-list .available-chatroom:hover,
+.list-container--bookmarks .rooms-list .available-chatroom:hover {
+
+    color: rgba(242, 187, 19, 1);
+    background-color: rgba(255,255, 255, 0.1);
+}
+
+.list-container--openrooms .open-rooms-list .available-chatroom a,
+.list-container--bookmarks .rooms-list .available-chatroom a {
+
+    margin-left: 10px;
+}
+
+.list-container--openrooms .open-rooms-list .available-chatroom a:first-child,
+.list-container--bookmarks .rooms-list .available-chatroom a:first-child {
+
+    margin: 0;
+    flex-grow: 2;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.list-container--openrooms .fa-bookmark,
+.list-container--openrooms .fa-info-circle,
+.list-container--openrooms .fa-sign-out-alt,
+.list-container--bookmarks .fa-bookmark {
+
+    color: white;
+}
+
+.list-container--openrooms .fa-bookmark:hover,
+.list-container--openrooms .fa-info-circle:hover,
+.list-container--openrooms .fa-sign-out-alt:hover,
+.list-container--bookmarks .fa-bookmark:hover {
+
+    color: rgba(242, 187, 19, 1);
+}
+
+.fa-bookmark::before {
+
+    content: "\2605";
+}
+
+.fa-info-circle::before {
+
+    content: "\1F6C8";
+}
+
+.fa-sign-out-alt::before {
+
+    content: "\2348";
+}
+
+#converse-modals {
+
+    position: fixed;
+    right: 0;
+    top: 60px;
+    width: 320px;
+    background-color: #252e38;
+    color: white;
+}
+
+.modal {
+
+    width: 298px;
+    padding: 10px;
+    border: 1px rgba(242, 187, 19, 1) solid;
+}
+
+.modal-header {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal-title {
+
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.modal-header .close {
+
+    margin-bottom: 5px;
+    padding: 5px 10px 5px 10px;
+    border: none;
+    color: #454c55;
+    background-color: rgba(242, 187, 19, 1);
+    font-weight: bold;
+	cursor: pointer;
+    text-transform: uppercase;
+    font-size: 18px;
+    text-align: center;
+}
+
+.modal-header .close:hover {
+
+	background-color: rgba(242, 187, 19, 0.9);
+}
+
+input[type="radio"] {
+
+    accent-color: rgba(242, 187, 19, 1);
+}
+
+.custom-control-input, .custom-control-label {
+
+    cursor: pointer;
+}
+
+converse-icon {
+
+    display: inline-block;
+    margin-right: 5px;
+}
+
+converse-icon.chat-status--online svg{
+
+    fill: var(--chat-status-online);
+}
+
+converse-icon.chat-status--busy svg{
+
+    fill: var(--chat-status-busy);
+}
+
+converse-icon.chat-status--away svg{
+
+    fill: var(--chat-status-away);
+}
+
+converse-icon.chat-status--xa svg{
+
+    fill: var(--subdued-color);
+}
+
+#set-xmpp-status {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#set-xmpp-status .form-group {
+
+    margin-bottom: 10px;
+}
+
+#set-xmpp-status .form-group .btn-group {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#set-xmpp-status .form-group .form-control {
+
+    display: block;
+    height:30px;
+	padding: 0 10px 0 10px;
+	border: none;
+	color: white;
+    background-color: #454c55;
+    accent-color: rgba(242, 187, 19, 1);
+}
+
+#set-xmpp-status .form-group converse-icon {
+
+    margin-left: 10px;
+    fill: rgba(242, 187, 19, 1);
+    cursor: pointer;
+}
+
+#set-xmpp-status .form-group converse-icon:hover {
+
+    fill: rgba(242, 187, 19, 0.9);
+}
+
+#set-xmpp-status button {
+
+    height: 30px;
+	padding: 0 10px 0 10px;
+	border: none;
+	color: #454c55;
+	background-color: rgba(242, 187, 19, 1);
+	font-weight: bold;
+	cursor: pointer;
+    text-transform: uppercase;
+}
+
+#set-xmpp-status button:hover {
+
+	background-color: rgba(242, 187, 19, 0.9);
+}
+
+.profile-form, .profile-form .row, .profile-form .row .col .form-group {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-form .row .col-auto svg.avatar {
+
+    border: 1px rgba(242, 187, 19, 0) solid;
+    cursor: pointer;
+}
+
+.profile-form .row .col-auto svg.avatar:hover {
+
+    border: 1px rgba(242, 187, 19, 0.9) solid;
+}
+
+.profile-form .form-group {
+
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.profile-form .form-group .form-control {
+
+    display: block;
+    height:30px;
+    margin-left: 10px;
+	padding: 0 10px 0 10px;
+	border: none;
+	color: white;
+    background-color: #454c55;
+    accent-color: rgba(242, 187, 19, 1);
+}
+
+.profile-form .form-group small {
+
+    text-align: center;
+}
+
+.profile-form hr {
+
+    display: none;
+}
+
+.profile-form button {
+
+    height: 30px;
+	padding: 0 10px 0 10px;
+	border: none;
+	color: #454c55;
+	background-color: rgba(242, 187, 19, 1);
+	font-weight: bold;
+	cursor: pointer;
+    text-transform: uppercase;
+}
+
+.profile-form button:hover {
+
+	background-color: rgba(242, 187, 19, 0.9);
+}
+
+#muc-list-modal {
+
+    display: none;
+}
+
+#muc-list-modal .available-chatrooms {
+
+    display: block;
+    margin: 0;
+    padding: 5px;
+    text-align: center;
+    list-style: none;
+    background-color: rgba(255,255, 255, 0.08);
+}
+
+#muc-list-modal .available-chatrooms li:first-child {
+
+    text-transform: uppercase;
+}
+
+#muc-list-modal .available-chatrooms li:not(:first-child) a:first-child {
+
+    display: block;
+    padding: 5px;
+    cursor: pointer;
+    color: white;
+    text-transform: lowercase;
+    text-decoration: none;
+}
+
+#muc-list-modal .available-chatrooms li:not(:first-child) a:first-child:hover {
+
+    color: rgba(242, 187, 19, 1);
+    background-color: rgba(255,255, 255, 0.1);
+}
+
+#muc-list-modal .available-chatrooms li:not(:first-child) a:last-child,
+#muc-list-modal .modal-footer button {
+
+    display: none;
+}
+
+/*
+- Write CSS for the "client infos" modal.
+- Write CSS for the "bookmark" modal.
+- Write CSS for the "room infos" modal.
+*/

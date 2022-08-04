@@ -20,53 +20,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>ChelonianGall</title>
-       
-    <meta charset = "utf-8"/>
+        <title>ChelonianGall</title>
+        
+        <meta charset = "utf-8"/>
 	
 	<link
-        type = "image/png"
-        rel = "icon"
-        href = "images/icon.png"
-    />
+                type = "image/png"
+                rel = "icon"
+                href = "images/icon.png"
+        />
 	<link
-        type = "text/css"
-        rel = "stylesheet"
-        href = "styles/global.css"
-    />
+                type = "text/css"
+                rel = "stylesheet"
+                href = "styles/global.css"
+        />
 	<link
-        type = "text/css"
-        rel = "stylesheet"
-        href = "styles/account_bar.css"
-    />
-    <link
-        type = "text/css"
-        rel = "stylesheet"
-        href = "styles/webchat.css"
-    />
-    <link
-        type = "text/css"
-        rel = "stylesheet"
-        href = "styles/home.css"
-    />
-    <link
-        type = "text/css"
-        rel = "stylesheet"
-        href = "styles/footer.css"
-    />
-    <link
-        type = "text/css"
-        rel = "stylesheet"
-        href = "converse/converse.min.css"
-        media = "all"
-    />
+                type = "text/css"
+                rel = "stylesheet"
+                href = "styles/account_bar.css"
+        />
+        <link
+                type = "text/css"
+                rel = "stylesheet"
+                href = "styles/webchat2.css"
+        />
+        <link
+                type = "text/css"
+                rel = "stylesheet"
+                href = "styles/footer.css"
+        />
 
-    <script src = "converse/converse.min.js"></script>
+        <script src = "dist/converse.min.js"></script>
 </head>
 <body>
-    <?php include 'elements/account_bar.php'; ?>
-    <?php include 'elements/home.php'; ?>
-    <?php include 'elements/footer.php'; ?>
+        <?php include 'elements/account_bar.php'; ?>
+        <?php include 'elements/home.php'; ?>
+        <?php
+                if (isset($_SESSION['login']) && $_SESSION['login'] == 'valid') {
+        ?>
+        <div id = "chat-container"><converse-root></converse-root></div>
+        <?php } ?>
+        <?php include 'elements/footer.php'; ?>
 </body>
-<?php include 'elements/chat.php' ?>
+<?php
+    if (isset($_SESSION['login']) && $_SESSION['login'] == 'valid') {
+?>
+    <script src = "scripts/webchat2.js"></script>
+<?php } ?>
 </html>
+
+<!--
+        - Integrate the chat in a more clean way.
+-->

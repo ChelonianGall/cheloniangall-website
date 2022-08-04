@@ -17,7 +17,6 @@
 **/
 
 converse.initialize({
-    
     allow_contact_removal: false,
     allow_contact_requests: false,
     allow_logout: true,
@@ -26,11 +25,11 @@ converse.initialize({
     allow_registration: false,
     auto_login: true,
     auto_register_muc_nickname: true,
-    auto_join_rooms: ['fr@conference.cheloniangall.com', 'world@conference.cheloniangall.com'],
     bosh_service_url: "https://cheloniangall.com/http-bind/",
     credentials_url: "https://cheloniangall.com/backend/credentials.php",
     discover_connection_methods: false,
     hide_muc_participants: true,
+    i18n: "en",
     keepalive: true,
     locked_domain: "cheloniangall.com",
     locked_muc_domain: "hidden",
@@ -39,7 +38,6 @@ converse.initialize({
     show_controlbox_by_default: true,
     show_desktop_notifications: false,
     visible_toolbar_buttons: {
-
         call: false,
         spoiler: false,
         emoji: true,
@@ -51,3 +49,7 @@ function logout ()
 {
     document.getElementsByClassName("logout")[0].click();
 }
+
+/*
+- Review the whole configuration.
+*/
