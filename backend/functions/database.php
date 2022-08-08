@@ -19,10 +19,12 @@
 
     function getDatabaseConnection ()
     {
-        $host = 'host';
-        $database = 'database';
-        $user = 'user';
-        $password = 'password';
+        $databaseInformations = fopen("databaseInformations", "r");
+
+        $host = fgets($databaseInformations);
+        $database = fgets($databaseInformations);
+        $user = fgets($databaseInformations);
+        $password = fgets($databaseInformations);
         
         return new PDO("mysql:host={$host};dbname={$database}", $user, $password);
     }
