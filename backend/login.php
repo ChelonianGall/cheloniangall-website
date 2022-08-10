@@ -26,5 +26,5 @@
     $_SESSION["password"] = $_POST["password"];
     $_SESSION["login"] = checkAccount($_POST["username"], $_POST["password"]);
         
-    redirect('https://cheloniangall.com');
+    redirect('/');
 ?>

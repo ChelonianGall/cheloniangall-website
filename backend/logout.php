@@ -25,5 +25,5 @@
 
     session_destroy();
 
-    redirect('https://cheloniangall.com');
+    redirect('/');
 ?>

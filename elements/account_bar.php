@@ -27,7 +27,7 @@
 	}
 ?>
 <div id = "account_bar">
-	<a href = "https://cheloniangall.com">
+	<a href = "">
 		<img
 			src = "images/title.png"
 			alt = "ChelonianGall logo"
@@ -88,7 +88,7 @@
 			</form>
 			<form
 				id = "switch_to_sign_up"
-				action = "https://cheloniangall.com"
+				action = ""
 				method = "post"
 			>
 				<input
@@ -156,7 +156,7 @@
 			</form>
 			<form
 				id = "switch_to_log_in"
-				action = "https://cheloniangall.com"
+				action = ""
 				method = "post"
 			>
 				<input

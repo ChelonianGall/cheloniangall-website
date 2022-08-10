@@ -28,7 +28,7 @@ converse.initialize({
     auto_register_muc_nickname: true,
     auto_join_rooms: ['fr@conference.cheloniangall.com', 'world@conference.cheloniangall.com'],
     bosh_service_url: "https://cheloniangall.com/http-bind/",
-    credentials_url: "https://cheloniangall.com/backend/credentials.php",
+    credentials_url: "/backend/credentials.php",
     discover_connection_methods: false,
     hide_muc_participants: true,
     keepalive: true,

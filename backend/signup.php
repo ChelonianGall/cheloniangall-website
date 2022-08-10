@@ -28,5 +28,5 @@
     if ($_SESSION["signup"] == 'registered') $_SESSION['account_form_type'] = 'log_in';
     else $_SESSION['account_form_type'] = 'sign_up';
 
-    redirect('https://cheloniangall.com');
+    redirect('/');
 ?>
