@@ -1,4 +1,5 @@
-<!--
+<?php
+    /*
     cheloniangall.com is a website created to host a webchat intended to replace the CodinGame's deleted one.
     Copyright (C) 2022 BlaiseEbuth
 
@@ -14,43 +15,55 @@
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
--->
-
-<?php include 'elements/init.php' ?>
+    */
+    
+    include 'elements/init.php'
+?>
 <!DOCTYPE html>
 <html>
 <head>
-        <title>ChelonianGall</title>
-        
-        <meta charset = "utf-8"/>
+    <title>ChelonianGall</title>
+       
+    <meta charset = "utf-8"/>
 	
 	<link
-                type = "image/png"
-                rel = "icon"
-                href = "images/icon.png"
-        />
+        type = "image/png"
+        rel = "icon"
+        href = "images/icon.png"
+    />
 	<link
-                type = "text/css"
-                rel = "stylesheet"
-                href = "styles/global.css"
-        />
+        type = "text/css"
+        rel = "stylesheet"
+        href = "styles/global.css"
+    />
 	<link
-                type = "text/css"
-                rel = "stylesheet"
-                href = "styles/account_bar.css"
-        />
-        <link
-                type = "text/css"
-                rel = "stylesheet"
-                href = "styles/webchat2.css"
-        />
-        <link
-                type = "text/css"
-                rel = "stylesheet"
-                href = "styles/footer.css"
-        />
+        type = "text/css"
+        rel = "stylesheet"
+        href = "styles/account_bar.css"
+    />
+    <link
+        type = "text/css"
+        rel = "stylesheet"
+        href = "styles/webchat.css"
+    />
+    <link
+        type = "text/css"
+        rel = "stylesheet"
+        href = "styles/home.css"
+    />
+    <link
+        type = "text/css"
+        rel = "stylesheet"
+        href = "styles/footer.css"
+    />
+    <link
+        type = "text/css"
+        rel = "stylesheet"
+        href = "dist/converse.min.css"
+        media = "all"
+    />
 
-        <script src = "dist/converse.min.js"></script>
+    <script src = "dist/converse.min.js"></script>
 </head>
 <body>
         <?php include 'elements/account_bar.php'; ?>
@@ -65,7 +78,7 @@
 <?php
     if (isset($_SESSION['login']) && $_SESSION['login'] == 'valid') {
 ?>
-    <script src = "scripts/webchat2.js"></script>
+    <script src = "scripts/webchat.js"></script>
 <?php } ?>
 </html>
 

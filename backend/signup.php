@@ -1,4 +1,5 @@
-<!--
+<?php
+    /*
     cheloniangall.com is a website created to host a webchat intended to replace the CodinGame's deleted one.
     Copyright (C) 2022 BlaiseEbuth
 
@@ -14,9 +15,8 @@
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
--->
+    */
 
-<?php
     include 'functions/account.php';
     include 'functions/redirect.php';
 
@@ -28,5 +28,5 @@
     if ($_SESSION["signup"] == 'registered') $_SESSION['account_form_type'] = 'log_in';
     else $_SESSION['account_form_type'] = 'sign_up';
 
-    redirect('https://cheloniangall.com');
+    redirect('/');
 ?>

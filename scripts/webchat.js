@@ -26,7 +26,7 @@ converse.initialize({
     auto_login: true,
     auto_register_muc_nickname: true,
     bosh_service_url: "https://cheloniangall.com/http-bind/",
-    credentials_url: "https://cheloniangall.com/backend/credentials.php",
+    credentials_url: "/backend/credentials.php",
     discover_connection_methods: false,
     hide_muc_participants: true,
     i18n: "en",

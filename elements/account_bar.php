@@ -1,4 +1,5 @@
-<!--
+<?php
+	/*
     cheloniangall.com is a website created to host a webchat intended to replace the CodinGame's deleted one.
     Copyright (C) 2022 BlaiseEbuth
 
@@ -14,9 +15,8 @@
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
--->
+    */
 
-<?php 
 	if (isset($_POST['account_form_type'])) {
 		
 		$_SESSION['account_form_type'] = $_POST['account_form_type'];
@@ -27,7 +27,7 @@
 	}
 ?>
 <div id = "account_bar">
-	<a href = "https://cheloniangall.com">
+	<a href = "">
 		<img
 			src = "images/title.png"
 			alt = "ChelonianGall logo"
@@ -88,7 +88,7 @@
 			</form>
 			<form
 				id = "switch_to_sign_up"
-				action = "https://cheloniangall.com"
+				action = ""
 				method = "post"
 			>
 				<input
@@ -156,7 +156,7 @@
 			</form>
 			<form
 				id = "switch_to_log_in"
-				action = "https://cheloniangall.com"
+				action = ""
 				method = "post"
 			>
 				<input
