@@ -16,34 +16,42 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 **/
 
-#chat-container {
+converse-root {
 
     --chat-status-online: rgb(12, 213, 63);
     --chat-status-busy: rgb(213, 37, 37);
     --chat-status-away: rgb(224, 134, 37);
     --subdued-color: rgb(69, 76, 85);
 
+    display: block;
     position: fixed;
     right: 0;
     top: 60px;
     bottom: 40px;
     width: 300px;
-    padding: 10px;
     background-color: #252e38;
     border-top: 1px #171d24 solid;
     border-bottom: 1px #171d24 solid;
     color: white;
 }
 
-.hidden, .collapsed {
+.hidden, .collapsed, .visually-hidden {
 
-    display: none;
+    display: none !important;
 }
 
-converse-root, converse-chats, converse-controlbox {
+converse-root>converse-chats {
+
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+converse-controlbox {
 
     display: block;
     height: 100%;
+    padding: 0 10px 0 10px;
 }
 
 converse-controlbox .flyout {
@@ -58,6 +66,7 @@ converse-controlbox .flyout {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    margin-top: 10px;
 }
 
 .controlbox-panes {
@@ -71,7 +80,7 @@ converse-controlbox .flyout {
 converse-controlbox-toggle {
 
     display: block;
-    margin-bottom: 10px;
+    margin: 10px;
     text-align: center;
 }
 
@@ -350,20 +359,335 @@ converse-headlines-panel .list-item a {
     content: "\2348";
 }
 
-#converse-modals {
+#converse-roster {
 
+    margin: 10px 0 10px 0;
+}
+
+#converse-roster converse-roster>div:first-child {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#converse-roster converse-roster>div:first-child span {
+
+    margin-right: 10px;
+    text-transform: uppercase;
+    color: rgba(242, 187, 19, 1);
+}
+
+#converse-roster converse-roster>div:first-child a {
+
+    cursor: pointer;
+}
+
+@keyframes spin {
+
+    0%   {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+#converse-roster converse-roster>div:first-child a .fa-spin {
+
+    animation-name: spin;
+    animation-duration: 0.7s;
+}
+
+#converse-roster converse-roster>div:first-child svg {
+
+    fill: white;
+}
+
+#converse-roster converse-roster>div:first-child svg:hover {
+
+    fill: rgba(242, 187, 19, 0.9);
+}
+
+converse-roster-filter .roster-filter-form>div {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+converse-roster-filter .roster-filter-form>div .filter-by {
+
+    margin-right: 10px;
+}
+
+converse-roster-filter .roster-filter-form>div .filter-by converse-icon {
+
+    cursor: pointer;
+    fill: var(--subdued-color);
+}
+
+converse-roster-filter .roster-filter-form>div .filter-by .selected,
+converse-roster-filter .roster-filter-form>div .filter-by converse-icon:hover {
+
+    fill: rgba(242, 187, 19, 1);
+}
+
+converse-roster-filter .roster-filter-form>div .btn-group {
+
+    display: flex;
+    align-items: center;
+}
+
+converse-roster-filter .roster-filter-form>div .btn-group input {
+
+    display: block;
+    height: 30px;
+    margin-right: 2px;
+	padding: 0 10px 0 10px;
+	border: none;
+	color: white;
+    background-color: #454c55;
+    accent-color: rgba(242, 187, 19, 1);
+}
+
+converse-roster-filter .roster-filter-form>div .btn-group converse-icon {
+
+    margin-left: 10px;
+    fill: rgba(242, 187, 19, 1);
+    cursor: pointer;
+}
+
+converse-roster-filter .roster-filter-form>div select {
+
+    display: block;
+    height: 30px;
+    padding: 0 10px 0 10px;
+    border: none;
+	color: white;
+    background-color: #454c55;
+    accent-color: rgba(242, 187, 19, 1);
+}
+
+converse-roster .roster-contacts {
+
+    margin-top: 5px;
+}
+
+converse-roster .roster-contacts .roster-group {
+
+    margin-top: 5px;
+    padding: 5px;
+    background-color: rgba(255,255, 255, 0.08);
+}
+
+converse-roster .roster-contacts .roster-group .group-toggle {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    fill: white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+converse-roster .roster-contacts .roster-group .group-toggle:hover {
+
+    color: rgba(242, 187, 19, 1);
+    fill: rgba(242, 187, 19, 1);
+}
+
+converse-roster .roster-contacts .roster-group .group-toggle converse-icon {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+converse-roster .roster-contacts .roster-group .roster-group-contacts {
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+converse-roster .roster-contacts .roster-group .roster-group-contacts .list-item .list-item-link {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+converse-roster .roster-contacts .roster-group .roster-group-contacts .list-item .list-item-link:hover {
+
+    color: rgba(242, 187, 19, 1);
+    background-color: rgba(255,255, 255, 0.1);
+}
+
+converse-roster .roster-contacts .roster-group .roster-group-contacts .list-item .list-item-link span:first-child {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+converse-roster .roster-contacts .roster-group .roster-group-contacts .list-item .list-item-link span:first-child converse-avatar,
+converse-roster .roster-contacts .roster-group .roster-group-contacts .list-item .list-item-link span:first-child converse-icon {
+
+    margin-right: 10px;
+}
+
+converse-roster .roster-contacts .roster-group .roster-group-contacts .list-item .list-item-link .contact-name {
+
+    display: block;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+}
+
+converse-muc {
+
+    display: block;
+    padding: 0 10px 0 10px;
+}
+
+converse-muc converse-controlbox-navback,
+converse-muc converse-dragresize {
+
+    display: none;
+}
+
+converse-muc converse-muc-heading.chat-head {
+
+    display: block;
+}
+
+converse-muc .chatbox-title {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+converse-muc .chatbox-title .chatbox-title__text {
+
+    display: block;
+    font-size: 12px;
+}
+
+converse-muc .chatbox-title .chatbox-title__text i {
+
+    font-style: normal;
+}
+
+converse-muc .chatbox-title .chatbox-title__buttons {
+
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: right;
+    align-items: center;
+    margin-left: 5px;
+}
+
+converse-muc .chatbox-title .chatbox-title__buttons .chatbox-btn {
+
+    display: block;
+    margin-left: 5px;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+converse-muc .chatbox-title .chatbox-title__buttons .chatbox-btn:hover {
+
+    color: rgba(242, 187, 19, 1);
+}
+
+converse-muc .chatbox-title .fa-minus::before {
+
+    content: "\23AF";
+}
+
+converse-muc .chatbox-title converse-dropdown button {
+
+    padding: 0;
+    border: none;
+    background-color: inherit;
+    fill: white;
+    cursor: pointer;
+}
+
+converse-muc .chatbox-title converse-dropdown button:hover,
+converse-muc .chatbox-title converse-dropdown button[aria-expanded="true"] {
+
+    fill: rgba(242, 187, 19, 1);
+}
+
+converse-muc .chatbox-title converse-dropdown button converse-icon {
+
+    margin: 0;
+}
+
+converse-muc .chatbox-title .dropdown-menu {
+
+    display: none;
+}
+
+converse-muc .chatbox-title .dropdown-menu.show {
+
+    display: flex;
+    flex-direction: column;
     position: fixed;
     right: 0;
-    top: 60px;
-    width: 320px;
+    width: 150px;
+    background-color: #363e48;
+    border: 1px rgba(242, 187, 19, 1) solid;
+    text-align: center;
+}
+
+converse-muc .chatbox-title .dropdown-menu.show .dropdown-item {
+
+    padding: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+converse-muc .chatbox-title .dropdown-menu.show .dropdown-item:hover {
+
+    background-color: #4b525b;
+    color: rgba(242, 187, 19, 1);
+}
+
+converse-muc .chatbox-title .dropdown-menu.show .dropdown-item converse-icon {
+
+    display: none;
+}
+
+converse-muc converse-muc-chatarea converse-chat-content .chat-content__notifications {
+
+    display: none;
+}
+
+#converse-modals {
+
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 300px;
+    max-height: 100%;
+    overflow-y: scroll;
     background-color: #252e38;
     color: white;
 }
 
 .modal {
 
-    width: 298px;
-    padding: 10px;
+    width: 278px;
+    padding: 10px !important;
     border: 1px rgba(242, 187, 19, 1) solid;
 }
 
@@ -607,8 +931,364 @@ converse-icon.chat-status--xa svg{
     display: none;
 }
 
+#muc-details-modal .modal-header .modal-title {
+
+    margin-right: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+}
+
+#muc-details-modal .room-info converse-rich-text a {
+
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: rgba(242, 187, 19, 1);
+    text-decoration: none;
+}
+
+#muc-details-modal .room-info converse-rich-text a:hover {
+
+    color: rgba(242, 187, 19, 0.9);
+}
+
+#muc-details-modal .chatroom-features .features-list {
+
+    padding: 0;
+    list-style: none;
+}
+
+#muc-details-modal .chatroom-features .features-list li {
+
+    margin-bottom: 10px;
+}
+
+#muc-details-modal .chatroom-features .features-list svg {
+
+    fill: white;
+}
+
+#muc-details-modal .modal-footer {
+
+    display: none;
+}
+
+#converse-bookmark-modal fieldset {
+
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    padding: 0;
+    border: none;
+}
+
+#converse-bookmark-modal .form-check {
+
+    display: inline;
+}
+
+#converse-bookmark-modal fieldset label {
+
+    padding-bottom: 5px;
+}
+
+#converse-bookmark-modal fieldset input[type="text"] {
+
+    display: block;
+    height: 30px;
+	padding: 0 10px 0 10px;
+	border: none;
+	color: white;
+    background-color: #454c55;
+    accent-color: rgba(242, 187, 19, 1);
+}
+
+#converse-bookmark-modal fieldset input[type="checkbox"] {
+
+    accent-color: rgba(242, 187, 19, 1);
+}
+
+#converse-bookmark-modal fieldset:last-child {
+
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#converse-bookmark-modal fieldset .btn:first-child {
+
+    margin-right: 5px;
+}
+
+#converse-bookmark-modal fieldset .btn {
+
+    display: block;
+    height: 30px;
+	padding: 0 10px 0 10px;
+    flex-grow: 2;
+	border: none;
+	color: #454c55;
+	background-color: rgba(242, 187, 19, 1);
+	font-weight: bold;
+	cursor: pointer;
+    text-transform: uppercase;
+}
+
+#converse-bookmark-modal fieldset .btn:hover {
+
+    background-color: rgba(242, 187, 19, 0.9);
+}
+
+#converse-client-info-modal .modal-body .nav {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#converse-client-info-modal .modal-body .nav .nav-item {
+
+    display: block;
+    flex-grow: 2;
+    text-align: center;
+}
+
+#converse-client-info-modal .modal-body .nav .nav-item a {
+
+    display: block;
+    padding: 5px;
+    color: rgba(242, 187, 19, 1);
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#converse-client-info-modal .modal-body .nav .nav-item a:hover {
+
+    color: rgba(242, 187, 19, 0.9);
+}
+
+#converse-client-info-modal .modal-body .nav .nav-item .active {
+
+    background-color: rgba(255,255, 255, 0.08);
+}
+
+#converse-client-info-modal .modal-body .tab-content .tab-pane,
+#converse-client-info-modal .modal-body .tab-content #about-tabpanel .modal-alert,
+#converse-client-info-modal .modal-body .tab-content #about-tabpanel br {
+
+    display: none;
+}
+
+#converse-client-info-modal .modal-body .tab-content .tab-pane.active {
+
+    display: block;
+    padding: 10px;
+    background-color: rgba(255,255, 255, 0.08);
+}
+
+#converse-client-info-modal .modal-body .tab-content #about-tabpanel h6 {
+
+    margin: 0;
+    font-size: 18px;
+}
+
+#converse-client-info-modal .modal-body .tab-content #about-tabpanel a {
+
+    color: rgba(242, 187, 19, 1);
+    text-decoration: none;
+}
+
+#converse-client-info-modal .modal-body .tab-content #about-tabpanel a:hover {
+
+    color: rgba(242, 187, 19, 0.9);
+}
+
+#converse-client-info-modal .modal-body .tab-content #commands-tabpanel .alert {
+
+    color: red;
+}
+
+#converse-client-info-modal .modal-body .tab-content #commands-tabpanel .form-group {
+
+    padding: 0;
+    border: none;
+}
+
+#converse-client-info-modal .modal-body .tab-content #commands-tabpanel .form-group:first-child {
+
+    margin-bottom: 10px;
+}
+
+#converse-client-info-modal .modal-body .tab-content #commands-tabpanel .form-group:nth-child(2) {
+
+    display: flex;
+}
+
+#converse-client-info-modal .modal-body .tab-content #commands-tabpanel .form-group .suggestion-box {
+
+    display: flex;
+    flex-direction: column;
+}
+
+#converse-client-info-modal .modal-body .tab-content #commands-tabpanel .form-group .suggestion-box__results {
+
+    margin: 0;
+    padding: 10px 5px 10px 5px;
+    list-style: none;
+    text-align: center;
+    background-color: #252e38;
+}
+
+#converse-client-info-modal .modal-body .tab-content #commands-tabpanel .form-group .suggestion-box__results li {
+
+    padding: 5px;
+    cursor: pointer;
+}
+
+#converse-client-info-modal .modal-body .tab-content #commands-tabpanel .form-group .suggestion-box__results li mark {
+
+    background-color: rgba(242, 187, 19, 1);
+}
+
+#converse-client-info-modal .modal-body .tab-content #commands-tabpanel .form-group .suggestion-box__results li:hover {
+
+    background-color: #454c55;
+}
+
+#converse-client-info-modal .modal-body .tab-content #commands-tabpanel .form-group .form-control {
+
+    display: block;
+    height: 30px;
+	padding: 0 10px 0 10px;
+	border: none;
+	color: white;
+    background-color: #454c55;
+    accent-color: rgba(242, 187, 19, 1);
+}
+
+#converse-client-info-modal .modal-body .tab-content #commands-tabpanel .form-group .btn {
+
+    display: block;
+    flex-grow: 2;
+    height: 30px;
+	padding: 0 10px 0 10px;
+	border: none;
+	color: #454c55;
+	background-color: rgba(242, 187, 19, 1);
+	font-weight: bold;
+	cursor: pointer;
+    text-transform: uppercase;
+}
+
+#converse-client-info-modal .modal-body .tab-content #commands-tabpanel .form-group:nth-child(3) {
+
+    margin: 0;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #252e38;
+}
+
+#converse-client-info-modal .modal-body .tab-content #commands-tabpanel .form-group:nth-child(3) .list-group {
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#converse-client-info-modal .modal-body .tab-content #commands-tabpanel .form-group:nth-child(3) .list-group .room-item a {
+
+    display: block;
+    padding: 5px;
+    color: rgba(242, 187, 19, 1);
+    text-decoration: none;
+}
+
+#converse-client-info-modal .modal-body .tab-content #commands-tabpanel .form-group:nth-child(3) .list-group .room-item a::before {
+
+    content: "> ";
+}
+
+#converse-client-info-modal .modal-body .tab-content #commands-tabpanel .form-group:nth-child(3) .list-group .room-item a:hover {
+
+    background-color: #454c55;
+    color: rgba(242, 187, 19, 0.9);
+}
+
+#converse-client-info-modal .modal-body .tab-content #commands-tabpanel .form-group:nth-child(3) .list-group .room-item form fieldset {
+
+    margin: 0;
+}
+
+#converse-client-info-modal .modal-body .tab-content #commands-tabpanel .form-group:nth-child(3) .list-group .room-item form fieldset .form-help {
+
+    display: none;
+}
+
+#converse-client-info-modal .modal-body .tab-content #commands-tabpanel .form-group:nth-child(3) .list-group .room-item form fieldset .form-group {
+
+    display: flex;
+    flex-direction: column;
+}
+
+#converse-client-info-modal .modal-body .tab-content #commands-tabpanel .form-group:nth-child(3) .list-group .room-item form fieldset .form-group label,
+#converse-client-info-modal .modal-body .tab-content #commands-tabpanel .form-group:nth-child(3) .list-group .room-item form fieldset label {
+
+    margin: 5px 0 5px 0;
+}
+
+#converse-client-info-modal .modal-body .tab-content #commands-tabpanel .form-group:nth-child(3) .list-group .room-item form fieldset:last-child {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px 0 10px 0;
+    padding: 0;
+    border: none;
+}
+
+#converse-client-info-modal .modal-body .tab-content #commands-tabpanel .form-group:nth-child(3) .list-group .room-item form fieldset:last-child input {
+
+    flex-grow: 2;
+}
+
+#converse-client-info-modal .modal-body .tab-content #commands-tabpanel .form-group:nth-child(3) .list-group .room-item form fieldset:last-child input:hover {
+
+    background-color: rgba(242, 187, 19, 0.9);
+}
+
+#converse-client-info-modal .modal-body .tab-content #commands-tabpanel .form-group:nth-child(3) .list-group .room-item form fieldset:last-child input:first-child {
+
+    margin-right: 5px;
+}
+
+#converse-client-info-modal .modal-body .tab-content #commands-tabpanel .form-group:nth-child(3) .list-group .room-item form fieldset .form-group input[type="checkbox"] {
+
+    accent-color: rgba(242, 187, 19, 1);
+}
+
+#converse-client-info-modal .modal-body .tab-content #commands-tabpanel .form-group:nth-child(3) .list-group .room-item form fieldset textarea {
+
+    display: block;
+    height: 30px;
+	padding: 10px;
+	border: none;
+	color: white;
+    background-color: #454c55;
+    accent-color: rgba(242, 187, 19, 1);    
+}
+
 /*
-- Write CSS for the "client infos" modal.
-- Write CSS for the "bookmark" modal.
-- Write CSS for the "room infos" modal.
+- Choose nickname *2?
+- Leave room
+- Status messages
+- Room configuration
+- Invite
+- Moderation
+- Destroy
+- Reduced room/tabs
+- Chat
 */

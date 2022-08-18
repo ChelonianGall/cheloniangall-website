@@ -56,22 +56,16 @@
         rel = "stylesheet"
         href = "styles/footer.css"
     />
-    <link
-        type = "text/css"
-        rel = "stylesheet"
-        href = "dist/converse.min.css"
-        media = "all"
-    />
 
     <script src = "dist/converse.min.js"></script>
 </head>
 <body>
         <?php include 'elements/account_bar.php'; ?>
-        <?php include 'elements/home.php'; ?>
+        <?php //include 'elements/home.php'; ?>
         <?php
                 if (isset($_SESSION['login']) && $_SESSION['login'] == 'valid') {
         ?>
-        <div id = "chat-container"><converse-root></converse-root></div>
+        <converse-root></converse-root>
         <?php } ?>
         <?php include 'elements/footer.php'; ?>
 </body>

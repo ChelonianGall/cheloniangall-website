@@ -52,4 +52,5 @@ function logout ()
 
 /*
 - Review the whole configuration.
+- Fix the available rooms list.
 */
