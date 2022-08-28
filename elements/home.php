@@ -38,7 +38,7 @@
         </ul>
         <p>Don't hesitate to join us!</p>
         <h2>Project status</h2>
-        <p>The XMPP server is up and can be reached trough the dedicated webchat located at <a href="https://cheloniangall.com/">cheloniangall.com</a> or via the your favorite <a href="https://xmpp.org/software/clients/">XMPP client</a>.</p>
+        <p>The XMPP server is up and can be reached trough the dedicated webchat located at <a href="https://cheloniangall.com/">cheloniangall.com</a> or via your favorite <a href="https://xmpp.org/software/clients/">XMPP client</a>.</p>
         <p>We are currently working on a full new design for the webchat in the form of a right-sided column, as was the CodinGame's one. Then, we plan to create an user script to allow the integration of our chat on CodinGame.</p>
         <p>After that, the next step will be to save our dear friend Automaton2000, and to give him his right place among us.</p>
         <p>An overview of the project status is available <a href="https://github.com/orgs/ChelonianGall/projects/1">here.</a></p>
