@@ -123,6 +123,72 @@ converse-root {
     color: var(--cg-white);
 }
 
+converse-root>converse-chats>converse-minimized-chats {
+
+    display: block;
+    margin: 10px;
+}
+
+converse-root>converse-chats>converse-minimized-chats>#minimized-chats>#toggle-minimized-chats {
+
+    display: none;
+}
+
+converse-root>converse-chats>converse-minimized-chats>#minimized-chats>.minimized-chats-flyout {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+converse-root>converse-chats>converse-minimized-chats>#minimized-chats>.minimized-chats-flyout>converse-minimized-chat {
+
+    width: 75px;
+    margin-right: 5px;
+    padding: 5px;
+    background-color: var(--cg-light-grey);
+}
+
+converse-root>converse-chats>converse-minimized-chats>#minimized-chats>.minimized-chats-flyout>converse-minimized-chat:last-child {
+
+    margin: 0;
+}
+
+converse-root>converse-chats>converse-minimized-chats>#minimized-chats>.minimized-chats-flyout>converse-minimized-chat>.chat-head {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+converse-root>converse-chats>converse-minimized-chats>#minimized-chats>.minimized-chats-flyout>converse-minimized-chat>.chat-head>.restore-chat {
+
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--cg-white);
+    cursor: pointer;
+}
+
+converse-root>converse-chats>converse-minimized-chats>#minimized-chats>.minimized-chats-flyout>converse-minimized-chat>.chat-head>.restore-chat:hover {
+
+    color: var(--cg-yellow);
+}
+
+converse-root>converse-chats>converse-minimized-chats>#minimized-chats>.minimized-chats-flyout>converse-minimized-chat>.chat-head>.close-chatbox-button {
+    
+    display: block;
+    height: 16px;
+    fill: var(--cg-white);
+    cursor: pointer;
+}
+
+converse-root>converse-chats>converse-minimized-chats>#minimized-chats>.minimized-chats-flyout>converse-minimized-chat>.chat-head>.close-chatbox-button:hover {
+
+    fill: var(--cg-yellow);
+}
+
 converse-root>converse-chats>converse-controlbox-toggle {
 
     display: block;
@@ -146,7 +212,7 @@ converse-root>converse-chats>converse-controlbox {
 
     display: block;
     height: 100%;
-    padding: 0 10px 0 10px;
+    padding: 0 10px 10px 10px;
 }
 
 converse-root>converse-chats>converse-controlbox>.flyout {
@@ -164,7 +230,7 @@ converse-root>converse-chats>converse-controlbox>.flyout>converse-dragresize {
 
 converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-head {
 
-    padding: 10px 0 10px 0;
+    padding-bottom: 10px;
 }
 
 converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-head>.close-chatbox-button {
@@ -192,6 +258,7 @@ converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-head>.close
 
 converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-panes {
 
+    padding-bottom: 60px;
     overflow-x: hidden;
     overflow-y: scroll;
 }
@@ -539,12 +606,6 @@ converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-panes>.cont
     border: none;
     background-color: var(--cg-lighter-grey);
     color: var(--cg-white);
-}
-
-converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-panes>.controlbox-pane>#converse-roster>converse-roster>.roster-contacts {
-    
-    margin-top: 5px;
-    margin-bottom: 10px;
 }
 
 converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-panes>.controlbox-pane>#converse-roster>converse-roster>.roster-contacts>.roster-group {
