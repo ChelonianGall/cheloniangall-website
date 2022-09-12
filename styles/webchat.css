@@ -27,6 +27,7 @@
 - Reduced room/tabs
 - Chat
 - User infos
+- Message author modal
 */
 
 @keyframes cg-blink {
@@ -43,6 +44,7 @@
 
 * {
 
+    --cg-blue: rgb(39, 104, 187);
     --cg-grey: rgb(37, 46, 56);
     --cg-light-grey: rgb(54, 62, 72);
     --cg-lighter-grey: rgb(69, 76, 85);
@@ -693,12 +695,27 @@ converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-panes>.cont
 converse-root>converse-chats>converse-muc {
 
     display: block;
+    height: 100%;
     padding: 0 10px 0 10px;
+}
+
+converse-root>converse-chats>converse-muc>.flyout {
+
+    display: block;
+    height: 100%;
 }
 
 converse-root>converse-chats>converse-muc>.flyout>converse-dragresize {
 
     display: none;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>converse-muc-heading {
+
+    display: block;
+    margin-bottom: 5px;
+    padding: 5px;
+    background-color: var(--cg-light-grey);
 }
 
 converse-root>converse-chats>converse-muc>.flyout>converse-muc-heading>.chatbox-title {
@@ -802,9 +819,158 @@ converse-root>converse-chats>converse-muc>.flyout>converse-muc-heading>.chatbox-
     display: none;
 }
 
+converse-root>converse-chats>converse-muc>.flyout>.chat-body {
+
+    display: block;
+    height: 100%;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea {
+
+    display: block;
+    height: 100%;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area {
+
+    display: block;
+    height: 100%;
+    overflow: scroll;
+}
+
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>.chat-content__notifications {
 
     display: none;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>.date-separator>.separator {
+
+    border: none;
+    border-bottom: 1px var(--cg-lighter-grey) solid;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>.date-separator>.separator-text {
+
+    display: block;
+    margin-bottom: 5px;
+    color: var(--cg-blue);
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message {
+
+    display: block;
+    margin-bottom: 5px;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.show-msg-author-modal {
+
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.show-msg-author-modal>converse-avatar {
+
+    display: block;
+    height: 40px;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.chat-msg__content {
+
+    overflow: hidden;
+    overflow-wrap: break-word;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.chat-msg__content>.chat-msg__heading>.chat-msg__author {
+
+    font-size: 16px;
+    color: var(--cg-yellow);
+    cursor: pointer;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.chat-msg__content>.chat-msg__heading>.chat-msg__author:hover {
+
+    color: var(--cg-shaded-yellow);
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.chat-msg__content>.chat-msg__heading>.chat-msg__time {
+
+    color: var(--cg-blue);
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.chat-msg__content>.chat-msg__body {
+
+    font-size: 14px;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.chat-msg__content>.chat-msg__body>.chat-msg__message>span>converse-icon {
+
+    fill: var(--cg-blue);
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.chat-msg__content>.chat-msg__body>.chat-msg__message>span>converse-chat-message-body>a {
+
+    color: var(--cg-blue);
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.chat-msg__content>.chat-msg__body>.chat-msg__message>span>converse-chat-message-body>.styling-directive {
+
+    color: var(--cg-blue);
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.chat-msg__content>.chat-msg__body>.chat-msg__message>span>converse-chat-message-body>code {
+
+    color: var(--cg-green);
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.chat-msg__content>.chat-msg__body>.chat-msg__message>span>converse-chat-message-body>.mention--self {
+
+    color: var(--cg-yellow);
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.chat-msg__content>.chat-msg__body>.chat-msg__message>span>converse-chat-message-body>blockquote {
+
+    margin: 0;
+    padding-left: 5px;
+    border-left: 2px var(--cg-green) solid;
+    font-style: italic;
+    color: var(--cg-green);
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.chat-msg__content--action {
+
+    font-style: italic;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.chat-msg__content--action>.chat-msg__body>.chat-msg__message>time {
+
+    display: none;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.separator {
+
+    display: block;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.separator>hr {
+
+    display: block;
+    border: none;
+    border-bottom: 1px var(--cg-blue) solid;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.separator>span {
+
+    display: block;
+    margin-bottom: 5px;
+    color: var(--cg-blue);
 }
 
 converse-root>#converse-modals {
