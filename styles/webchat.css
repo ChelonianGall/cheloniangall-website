@@ -900,8 +900,20 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
     color: var(--cg-shaded-yellow);
 }
 
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.chat-msg__content>.chat-msg__heading>.badge {
+
+    padding: 0 5px 0 5px;
+    border-radius: 3px;
+    background-color: var(--cg-shaded-yellow);
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--cg-lighter-grey);
+}
+
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.chat-msg__content>.chat-msg__heading>.chat-msg__time {
 
+    font-size: 14px;
     color: var(--cg-blue);
 }
 
@@ -942,6 +954,12 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
     border-left: 2px var(--cg-green) solid;
     font-style: italic;
     color: var(--cg-green);
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.chat-msg__content>.chat-msg__body>.chat-msg__message>span>converse-chat-message-body>.emoji {
+
+    width: 20px;
+    height: 20px;
 }
 
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.chat-msg__content--action {

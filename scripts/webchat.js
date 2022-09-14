@@ -195,4 +195,5 @@ function logout ()
 
 /*
 - Fix the available rooms list.
+- Change view mode and root ?
 */
