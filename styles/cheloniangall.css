@@ -1,4 +1,4 @@
-/*
+/**
     cheloniangall.com is a website created to host a webchat intended to replace the CodinGame's deleted one.
     Copyright (C) 2022 BlaiseEbuth
 
@@ -14,33 +14,7 @@
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
-*/
-
-/*
-- Choose nickname *2?
-- Leave room
-- Status messages
-- Room configuration
-- Invite
-- Moderation
-- Destroy
-- Reduced room/tabs
-- Chat
-- User infos
-- Message author modal
-*/
-
-@keyframes cg-blink {
-    
-    from {color: var(--cg-red);}
-    to {color: var(--cg-orange);}
-}
-
-@keyframes cg-spin {
-
-    0% {transform: rotate(0deg);}
-    100% {transform: rotate(360deg);}
-}
+**/
 
 * {
 
@@ -60,6 +34,32 @@
     --chat-status-busy: var(--cg-red);
     --chat-status-away: var(--cg-orange);
     --subdued-color: var(--cg-lighter-grey);
+}
+
+@font-face {
+	
+	font-family: "Open Sans";
+	src: url("../fonts/OpenSans.ttf");
+	font-style: normal;
+}
+
+@font-face {
+
+	font-family: "Open Sans";
+	src: url("../fonts/OpenSans-Italic.ttf");
+	font-style: italic;
+}
+
+@keyframes cg-blink {
+    
+    from {color: var(--cg-red);}
+    to {color: var(--cg-orange);}
+}
+
+@keyframes cg-spin {
+
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
 }
 
 .hidden, .collapsed, .visually-hidden {
@@ -112,17 +112,226 @@ converse-icon.chat-status--xa {
     fill: var(--subdued-color);
 }
 
+html {
+
+    width: 100%;
+    height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: Open Sans;
+}
+
+html>body {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: var(--cg-dark-grey);
+	color: var(--cg-white);
+}
+
+html>body>#left-column {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 3;
+    height: 100%;
+    overflow: scroll;
+}
+
+html>body>#left-column>#header {
+
+    display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+	height: 50px;
+	padding: 5px 0 5px 0;
+	background-color: var(--cg-grey);
+}
+
+html>body>#left-column>#header>a>#site_title {
+
+	height: 50px;
+}
+
+html>body>#left-column>#home {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+html>body>#left-column>#home>#turtle {
+
+    border-radius: 50%;
+    border: 5px var(--cg-yellow) solid;
+}
+
+html>body>#left-column>#home>#about {
+
+    max-width: 800px;
+    margin-left: 20px;
+}
+
+html>body>#left-column>#home>#about>h2 {
+
+    color: var(--cg-yellow);
+}
+
+html>body>#left-column>#home>#about a {
+
+    text-decoration: none;
+    color: var(--cg-yellow);
+}
+
+html>body>#left-column>#home>#about a:hover {
+
+    color: var(--cg-shaded-yellow);
+}
+
+html>body>#left-column>#footer {
+
+    width: 100%;
+    height: 30px;
+    padding: 5px 0 5px 0;
+    display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--cg-grey);
+}
+
+html>body>#left-column>#footer>p {
+
+    margin: 0;
+}
+
+html>body>#right-column {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 300px;
+    max-width: 300px;
+    height: 100%;
+    overflow: scroll;
+    background-color: var(--cg-grey);
+    border-left: 1px var(--cg-dark-grey) solid;
+}
+
+html>body>#right-column>#account_form {
+
+    display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+	background-color: var(--cg-grey);
+}
+
+#account_form .bad_username,
+#account_form .bad_password,
+#account_form .username_already_used,
+#account_form .signup_error {
+
+	border: 1px var(--cg-red) solid !important;
+}
+
+html>body>#right-column>#account_form>#sign_up_form,
+html>body>#right-column>#account_form>#log_in_form {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+html>body>#right-column>#account_form>#sign_up_form>input,
+html>body>#right-column>#account_form>#log_in_form>input {
+
+    height:30px;
+	padding: 0 10px 0 10px;
+	border: none;
+	color: var(--cg-white);
+}
+
+html>body>#right-column>#account_form>#sign_up_form>input[type="text"],
+html>body>#right-column>#account_form>#sign_up_form>input[type="password"],
+html>body>#right-column>#account_form>#log_in_form>input[type="text"],
+html>body>#right-column>#account_form>#log_in_form>input[type="password"] {
+
+    margin-bottom: 10px;
+    background-color: var(--cg-lighter-grey);
+    accent-color: var(--cg-yellow);
+}
+
+html>body>#right-column>#account_form>#sign_up_form>input[type="submit"],
+html>body>#right-column>#account_form>#log_in_form>input[type="submit"] {
+
+    background-color: var(--cg-yellow);
+	font-weight: bold;
+    color: var(--cg-lighter-grey);
+	cursor: pointer;
+}
+
+html>body>#right-column>#account_form>#sign_up_form>input[type="submit"]:hover,
+html>body>#right-column>#account_form>#log_in_form>input[type="submit"]:hover {
+
+    background-color: var(--cg-shaded-yellow);
+}
+
+html>body>#right-column>#account_form>#switch_to_log_in,
+html>body>#right-column>#account_form>#switch_to_sign_up {
+
+    margin-top: 20px;
+}
+
+html>body>#right-column>#account_form>#switch_to_log_in>button,
+html>body>#right-column>#account_form>#switch_to_sign_up>button {
+
+	border: none;
+	background-color: transparent;
+    font-size: 1em;
+    color: var(--cg-yellow);
+	cursor: pointer;
+}
+
+html>body>#right-column>#account_form>#switch_to_log_in>button:hover,
+html>body>#right-column>#account_form>#switch_to_sign_up>button:hover {
+
+    color: var(--cg-shaded-yellow);
+}
+
+/*
+- Choose nickname *2?
+- Leave room
+- Status messages
+- Room configuration
+- Invite
+- Moderation
+- Destroy
+- Reduced room/tabs
+- Chat
+- User infos
+- Message author modal
+- logout button
+*/
+
 converse-root {
 
     display: block;
-    position: fixed;
-    right: 0;
-    top: 60px;
-    bottom: 40px;
-    width: 300px;
-    background-color: var(--cg-grey);
-    border: 1px var(--cg-dark-grey) solid;
-    color: var(--cg-white);
+    width: 100%;
+    height: 100%;
 }
 
 converse-root>converse-chats>converse-minimized-chats {
@@ -213,8 +422,7 @@ converse-root>converse-chats>converse-controlbox-toggle:hover {
 converse-root>converse-chats>converse-controlbox {
 
     display: block;
-    height: 100%;
-    padding: 0 10px 10px 10px;
+    padding: 0 10px 0 10px;
 }
 
 converse-root>converse-chats>converse-controlbox>.flyout {
@@ -232,7 +440,7 @@ converse-root>converse-chats>converse-controlbox>.flyout>converse-dragresize {
 
 converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-head {
 
-    padding-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-head>.close-chatbox-button {
@@ -260,9 +468,7 @@ converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-head>.close
 
 converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-panes {
 
-    padding-bottom: 60px;
-    overflow-x: hidden;
-    overflow-y: scroll;
+    padding-bottom: 10px;
 }
 
 converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-panes>.controlbox-pane>converse-user-profile {
@@ -1405,7 +1611,7 @@ converse-root>#converse-modals>#converse-client-info-modal>.modal-dialog>.modal-
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 0;
+    margin: 10px 0 0 0;
     padding: 0;
     list-style: none;
 }

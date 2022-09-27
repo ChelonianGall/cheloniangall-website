@@ -153,7 +153,7 @@ converse.initialize({
     registration_domain: '',
     render_media: false,
     roomconfig_whitelist: [],
-    //root: 'window.document',
+    root: window.document,
     roster_groups: true,
     send_chat_state_notifications: false,
     send_chat_markers: ['received', 'displayed', 'acknowledged'],
@@ -195,5 +195,4 @@ function logout ()
 
 /*
 - Fix the available rooms list.
-- Change view mode and root ?
 */
