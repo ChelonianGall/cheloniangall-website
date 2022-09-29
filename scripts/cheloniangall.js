@@ -165,7 +165,7 @@ converse.initialize({
     show_message_avatar: true,
     show_images_inline: false,
     show_retraction_warning: false,
-    show_send_button: true,
+    show_send_button: false,
     show_tab_notifications: true,
     singleton: false,
     smacks_max_unacked_stanzas: 5,
@@ -195,4 +195,6 @@ function logout ()
 
 /*
 - Fix the available rooms list.
+- New logout.
+- Chat behaviour.
 */
