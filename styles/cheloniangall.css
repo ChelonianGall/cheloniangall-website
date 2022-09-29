@@ -349,6 +349,7 @@ converse-root>converse-chats {
 
 converse-root>converse-chats>converse-minimized-chats {
 
+    order: 1;
     display: block;
     margin: 10px;
 }
@@ -415,9 +416,10 @@ converse-root>converse-chats>converse-minimized-chats>#minimized-chats>.minimize
 
 converse-root>converse-chats>converse-controlbox-toggle {
 
+    order: 0;
     display: block;
     margin: 10px;
-    margin-top: 0;
+    margin-bottom: 0;
     padding: 5px;
     background-color: var(--cg-yellow);
     text-align: center;
@@ -436,7 +438,15 @@ converse-root>converse-chats>converse-controlbox-toggle:hover {
 converse-root>converse-chats>converse-controlbox {
 
     display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 280px;
+    height: 100%;
+    max-height: 100%;
     padding: 0 10px 0 10px;
+    overflow: hidden;
+    background-color: var(--cg-grey);
 }
 
 converse-root>converse-chats>converse-controlbox>.flyout {
@@ -445,6 +455,7 @@ converse-root>converse-chats>converse-controlbox>.flyout {
     flex-direction: column;
     justify-content: flex-start;
     height: 100%;
+    overflow: hidden;
 }
 
 converse-root>converse-chats>converse-controlbox>.flyout>converse-dragresize {
@@ -454,7 +465,7 @@ converse-root>converse-chats>converse-controlbox>.flyout>converse-dragresize {
 
 converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-head {
 
-    margin-bottom: 10px;
+    margin: 10px 0 10px 0;
 }
 
 converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-head>.close-chatbox-button {
@@ -482,7 +493,17 @@ converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-head>.close
 
 converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-panes {
 
+    flex: 1;
     padding-bottom: 10px;
+    overflow: hidden;
+}
+
+converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-panes>.controlbox-pane {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
 }
 
 converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-panes>.controlbox-pane>converse-user-profile {
@@ -735,6 +756,21 @@ converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-panes>.cont
     color: var(--cg-yellow);
 }
 
+converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-panes>.controlbox-pane>#converse-roster {
+
+    flex: 1;
+    display: block;
+    overflow: hidden;
+}
+
+converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-panes>.controlbox-pane>#converse-roster>converse-roster {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+}
+
 converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-panes>.controlbox-pane>#converse-roster>converse-roster>.controlbox-padded {
 
     display: flex;
@@ -841,10 +877,21 @@ converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-panes>.cont
     color: var(--cg-white);
 }
 
+converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-panes>.controlbox-pane>#converse-roster>converse-roster>.roster-contacts {
+
+    display: block;
+    padding-top: 5px;
+    overflow: hidden;
+}
+
 converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-panes>.controlbox-pane>#converse-roster>converse-roster>.roster-contacts>.roster-group {
 
-    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
     padding: 5px;
+    overflow: hidden;
     background-color: var(--cg-light-grey);
 }
 
@@ -876,8 +923,11 @@ converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-panes>.cont
 
 converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-panes>.controlbox-pane>#converse-roster>converse-roster>.roster-contacts>.roster-group>.roster-group-contacts {
 
+    flex: 1;
+    display: block;
     margin: 0;
     padding: 0;
+    overflow: scroll;
     list-style: none;
 }
 
@@ -925,6 +975,7 @@ converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-panes>.cont
 
 converse-root>converse-chats>converse-muc {
 
+    order: 2;
     flex: 1;
     display: block;
     padding: 0 10px 0 10px;
