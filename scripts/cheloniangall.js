@@ -1,4 +1,4 @@
-/**
+/*
     cheloniangall.com is a website created to host a webchat intended to replace the CodinGame's deleted one.
     Copyright (C) 2022 BlaiseEbuth
 
@@ -14,7 +14,7 @@
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
-**/
+*/
 
 converse.initialize({
     allowed_audio_domains: [],
@@ -188,13 +188,37 @@ converse.initialize({
     xhr_user_search_url: null,
 });
 
-function logout ()
+var logoutSetupIntervalID;
+
+function setupLogout ()
 {
-    document.getElementsByClassName("logout")[0].click();
+    if (document.getElementsByClassName("logout")[0]) {
+
+        document.getElementsByClassName("logout")[0].outerHTML = 
+            document.getElementsByClassName("logout")[0].outerHTML;
+
+        document.getElementsByClassName("logout")[0].getElementsByTagName('svg')[0].remove();
+
+        document.getElementsByClassName("logout")[0].onclick = function() {
+            
+            document.location = '/backend/logout.php';
+        };
+
+        clearInterval(logoutSetupIntervalID);
+    }
 }
+
+document.addEventListener("DOMContentLoaded",
+
+    function ()
+    {
+        logoutSetupIntervalID = setInterval(setupLogout, 100);
+
+        return true;
+    }
+);
 
 /*
 - Fix the available rooms list.
-- New logout.
 - Chat behaviour.
 */
