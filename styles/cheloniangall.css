@@ -328,7 +328,6 @@ html>body>#right-column>#account_form>#switch_to_sign_up>button:hover {
 - New messages
 - Emojis
 - Occupants
-- Suggestions
 */
 
 converse-root {
@@ -1375,11 +1374,52 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
     height: 100%;
 }
 
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-muc-message-form>.sendXMPPMessage>.suggestion-box>.suggestion-box__results {
+
+    position: fixed;
+    bottom: 70px;
+    width: fit-content;
+    margin: 0;
+    padding: 0;
+    overflow: scroll;
+    border: 1px var(--cg-yellow) solid;
+    list-style: none;
+    text-align: center
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-muc-message-form>.sendXMPPMessage>.suggestion-box>.suggestion-box__results>li {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    background-color: var(--cg-light-grey);
+    cursor: pointer;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-muc-message-form>.sendXMPPMessage>.suggestion-box>.suggestion-box__results>li:hover {
+
+    background-color: var(--cg-lighter-grey);
+    color: var(--cg-yellow);
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-muc-message-form>.sendXMPPMessage>.suggestion-box>.suggestion-box__results>li>.avatar {
+
+    margin-right: 5px;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-muc-message-form>.sendXMPPMessage>.suggestion-box>.suggestion-box__results>li>mark {
+
+    background-color: var(--cg-yellow);
+    color: var(--cg-lighter-grey);
+}
+
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-muc-message-form>.sendXMPPMessage>.suggestion-box>.chat-textarea {
 
     display: block;
     width: 250px;
-    height: 38px;
+    height: 38px !important;
     margin: 0;
     padding: 10px;
     border: none;
