@@ -121,7 +121,7 @@ converse.initialize({
     modtools_disable_query: ['member', 'outcast', 'visitor'],
     muc_clear_messages_on_leave: false,
     muc_disable_slash_commands: false,
-    muc_domain: "cheloniangall.com",
+    muc_domain: "conference.cheloniangall.com",
     muc_fetch_members: true,
     muc_history_max_stanzas: 0,
     muc_instant_rooms: false,
@@ -185,7 +185,7 @@ converse.initialize({
     websocket_url: undefined,
     view_mode: 'overlayed',
     whitelisted_plugins: [],
-    xhr_user_search_url: null,
+    xhr_user_search_url: null
 });
 
 var logoutSetupIntervalID;
@@ -219,6 +219,5 @@ document.addEventListener("DOMContentLoaded",
 );
 
 /*
-- Fix the available rooms list.
 - Chat behaviour.
 */
