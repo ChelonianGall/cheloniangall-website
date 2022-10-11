@@ -73,7 +73,7 @@ converse.initialize({
         "nature": ":turtle:",
         "food": ":beer:",
         "symbols": ":skull_crossbones:",
-        "flags": ":flag_black:",
+        "flags": ":flag_white:",
         //"custom": ":converse:"
     },
     emoji_categories_label: {

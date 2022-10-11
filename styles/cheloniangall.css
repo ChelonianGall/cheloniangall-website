@@ -325,8 +325,6 @@ html>body>#right-column>#account_form>#switch_to_sign_up>button:hover {
 - Chat
 - User infos
 - Message author modal
-- New messages
-- Emojis
 - Occupants
 */
 
@@ -1304,6 +1302,26 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
     background-color: var(--cg-grey);
 }
 
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>.new-msgs-indicator {
+
+    position: fixed;
+    bottom: 110px;
+    width: 268px;
+    padding: 5px;
+    border: 1px var(--cg-yellow) solid;
+    background-color: var(--cg-light-grey);
+    text-align: center;
+    color: var(--cg-yellow);
+    cursor: pointer;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>.new-msgs-indicator:hover {
+
+    background-color: var(--cg-lighter-grey);
+    border: 1px var(--cg-shaded-yellow) solid;
+    color: var(--cg-shaded-yellow);
+}
+
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar {
 
     display: block;
@@ -1327,7 +1345,8 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
     cursor: pointer;
 }
 
-converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.toggle-emojis:hover {
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.toggle-emojis:hover,
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.toggle-emojis[aria-expanded="true"] {
 
     fill: var(--cg-yellow);
 }
@@ -1339,7 +1358,171 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
 
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu.show {
 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 110px;
+    right: 9px;
+    border: 1px var(--cg-yellow) solid;
+    background-color: var(--cg-light-grey);    
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>.emoji-picker__header>.emoji-search {
+
+    width: 240px;
+    height: 30px;
+    margin: 10px 10px 0 10px;
+    padding: 0 10px 0 10px;
+    border: none;
+    background-color: var(--cg-lighter-grey);
+    accent-color: var(--cg-yellow);
+    color: var(--cg-white);
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>.emoji-picker__header>ul {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 5px;
+    padding: 0;
+    list-style: none;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>.emoji-picker__header>ul>.emoji-category {
+
     display: block;
+    padding: 5px;
+    border-bottom: 2px transparent solid;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>.emoji-picker__header>ul>.emoji-category.picked {
+
+    border-bottom: 2px var(--cg-yellow) solid;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>.emoji-picker__header>ul>.emoji-category>.pick-category {
+
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>.emoji-picker__header>ul>.emoji-category>.pick-category>.emoji {
+
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>converse-emoji-picker-content {
+
+    display: block;
+    height: 300px;
+    overflow: hidden;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>converse-emoji-picker-content>.emoji-picker__lists {
+
+    display: block;
+    height: 100%;
+    overflow: hidden;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>converse-emoji-picker-content>.emoji-picker__lists>.emojis-lists__container--search {
+
+    margin-top: 10px;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>converse-emoji-picker-content>.emoji-picker__lists>.emoji-lists__container {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    height: 100%;
+    padding: 0 10px 0 10px;
+    overflow: scroll;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>converse-emoji-picker-content>.emoji-picker__lists>.emoji-lists__container[hidden] {
+
+    display: none;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>converse-emoji-picker-content>.emoji-picker__lists>.emoji-lists__container>.emoji-category__heading {
+
+    display: block;
+    width: 260px;
+    padding: 5px 0 5px 0;
+    border: 1px var(--cg-yellow) solid;
+    background-color: var(--cg-lighter-grey);
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--cg-yellow);
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>converse-emoji-picker-content>.emoji-picker__lists>.emoji-lists__container>.emoji-picker {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    max-width: 260px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>converse-emoji-picker-content>.emoji-picker__lists>.emoji-lists__container>.emoji-picker>.insert-emoji>a>.emoji {
+
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>.emoji-skintone-picker {
+
+    margin: 5px;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>.emoji-skintone-picker>ul {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>.emoji-skintone-picker>ul>.emoji-skintone {
+
+    display: block;
+    padding: 2px;
+    border: 2px transparent solid;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>.emoji-skintone-picker>ul>.emoji-skintone.picked {
+
+    border: 2px var(--cg-yellow) solid;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>.emoji-skintone-picker>ul>.emoji-skintone>.pick-skintone {
+
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>.emoji-skintone-picker>ul>.emoji-skintone>.pick-skintone>.emoji {
+
+    display: block;
+    width: 20px;
+    height: 20px;
 }
 
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>.toggle_occupants {
@@ -1355,6 +1538,13 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
 
     fill: var(--cg-yellow);
 }
+
+/*TEMPORARY*/
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>button[title="Choose a file to send"] {
+
+    display: none;
+}
+/***********/
 
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-muc-message-form {
 
