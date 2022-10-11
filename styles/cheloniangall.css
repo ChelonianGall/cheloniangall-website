@@ -325,7 +325,6 @@ html>body>#right-column>#account_form>#switch_to_sign_up>button:hover {
 - Chat
 - User infos
 - Message author modal
-- Occupants
 */
 
 converse-root {
@@ -1534,7 +1533,8 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
     cursor: pointer;
 }
 
-converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>.toggle_occupants:hover {
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>.toggle_occupants:hover,
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>.toggle_occupants[title^="Hide"] {
 
     fill: var(--cg-yellow);
 }
@@ -1617,6 +1617,139 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
     background-color: var(--cg-lighter-grey);
     accent-color: var(--cg-yellow);
     color: var(--cg-white);
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>converse-muc-sidebar {
+
+    display: block;
+    position: fixed;
+    bottom: 110px;
+    width: 270px;
+    padding: 5px;
+    border: 1px var(--cg-yellow) solid;
+    background-color: var(--cg-light-grey);
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>converse-muc-sidebar>.occupants-header>.occupants-header--title {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>converse-muc-sidebar>.occupants-header>.occupants-header--title>.occupants-heading {
+
+    display: block;
+    flex-grow: 2;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>converse-muc-sidebar>.occupants-header>.occupants-header--title>.hide-occupants {
+
+    padding: 5px;
+    border: none;
+    background-color: var(--cg-yellow);
+    fill: var(--cg-lighter-grey);
+    cursor: pointer;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>converse-muc-sidebar>.occupants-header>.occupants-header--title>.hide-occupants:hover {
+
+    background-color: var(--cg-shaded-yellow);
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>converse-muc-sidebar>.occupants-header>.occupants-header--title>.hide-occupants>converse-icon {
+
+    display: block;
+    width: 16px;
+    height: 16px;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>converse-muc-sidebar>.dragresize {
+
+    display: none;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>converse-muc-sidebar>.occupant-list {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    max-height: 400px;
+    overflow-y: scroll;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>converse-muc-sidebar>.occupant-list>.occupant>.row {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 260px;
+    gap: 5px;
+    padding: 5px;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>converse-muc-sidebar>.occupant-list>.occupant>.row:hover {
+
+    background-color: var(--cg-lighter-grey);
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>converse-muc-sidebar>.occupant-list>.occupant>.row>.col-auto>.show-msg-author-modal {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>converse-muc-sidebar>.occupant-list>.occupant>.row>.col-auto>.show-msg-author-modal>converse-avatar {
+
+    display: block;
+    width: 30px;
+    height: 30px;
+    border: 1px transparent solid;
+    cursor: pointer;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>converse-muc-sidebar>.occupant-list>.occupant>.row>.col-auto>.show-msg-author-modal>converse-avatar:hover {
+
+    border: 1px var(--cg-yellow) solid;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>converse-muc-sidebar>.occupant-list>.occupant>.row>.occupant-nick-badge>.occupant-nick {
+
+    color: var(--cg-yellow);
+    cursor: pointer;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>converse-muc-sidebar>.occupant-list>.occupant>.row>.occupant-nick-badge>.occupant-nick:hover {
+
+    color: var(--cg-shaded-yellow);
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>converse-muc-sidebar>.occupant-list>.occupant>.row>.occupant-nick-badge>.occupant-badges>.badge-groupchat {
+
+    display: none;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>converse-muc-sidebar>.occupant-list>.occupant>.row>.occupant-nick-badge>.occupant-badges>.badge-info {
+
+    padding: 0 5px 0 5px;
+    border-radius: 3px;
+    background-color: var(--cg-shaded-yellow);
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--cg-lighter-grey);
 }
 
 converse-root>#converse-modals {
