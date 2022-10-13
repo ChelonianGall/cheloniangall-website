@@ -321,8 +321,7 @@ html>body>#right-column>#account_form>#switch_to_sign_up>button:hover {
 - Invite
 - Moderation
 - Destroy
-- Reduced room/tabs
-- Chat
+- Reduced room/tabs + notifs
 - User infos
 - Message author modal
 */
@@ -969,6 +968,7 @@ converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-panes>.cont
     text-overflow: ellipsis;
 }
 
+converse-root>converse-chats>converse-chat,
 converse-root>converse-chats>converse-muc {
 
     order: 2;
@@ -978,6 +978,7 @@ converse-root>converse-chats>converse-muc {
     overflow: hidden;
 }
 
+converse-root>converse-chats>converse-chat>.flyout,
 converse-root>converse-chats>converse-muc>.flyout {
 
     display: flex;
@@ -986,11 +987,13 @@ converse-root>converse-chats>converse-muc>.flyout {
     height: 100%;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>converse-dragresize,
 converse-root>converse-chats>converse-muc>.flyout>converse-dragresize {
 
     display: none;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>converse-chat-heading,
 converse-root>converse-chats>converse-muc>.flyout>converse-muc-heading {
 
     display: block;
@@ -999,6 +1002,7 @@ converse-root>converse-chats>converse-muc>.flyout>converse-muc-heading {
     background-color: var(--cg-light-grey);
 }
 
+converse-root>converse-chats>converse-chat>.flyout>converse-chat-heading>.chatbox-title,
 converse-root>converse-chats>converse-muc>.flyout>converse-muc-heading>.chatbox-title {
 
     display: flex;
@@ -1007,9 +1011,48 @@ converse-root>converse-chats>converse-muc>.flyout>converse-muc-heading>.chatbox-
     align-items: center;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>converse-chat-heading>.chatbox-title>.chatbox-title--row {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+}
+
+converse-root>converse-chats>converse-chat>.flyout>converse-chat-heading>.chatbox-title>.chatbox-title--row>converse-controlbox-navback,
 converse-root>converse-chats>converse-muc>.flyout>converse-muc-heading>.chatbox-title>.chatbox-title--row>converse-controlbox-navback {
 
     display: none;
+}
+
+converse-root>converse-chats>converse-chat>.flyout>converse-chat-heading>.chatbox-title>.chatbox-title--row>.show-msg-author-modal {
+
+    border: 1px transparent solid;
+    cursor: pointer;
+}
+
+converse-root>converse-chats>converse-chat>.flyout>converse-chat-heading>.chatbox-title>.chatbox-title--row>.show-msg-author-modal:hover {
+
+    border: 1px var(--cg-yellow) solid;
+}
+
+converse-root>converse-chats>converse-chat>.flyout>converse-chat-heading>.chatbox-title>.chatbox-title--row>.show-msg-author-modal>span>converse-avatar {
+
+    display: block;
+    width: 40px;
+    height: 40px;
+}
+
+converse-root>converse-chats>converse-chat>.flyout>converse-chat-heading>.chatbox-title>.chatbox-title--row>.chatbox-title__text {
+
+    font-size: 12px;
+    cursor: pointer;
+}
+
+converse-root>converse-chats>converse-chat>.flyout>converse-chat-heading>.chatbox-title>.chatbox-title--row>.chatbox-title__text:hover {
+
+    color: var(--cg-yellow);
 }
 
 converse-root>converse-chats>converse-muc>.flyout>converse-muc-heading>.chatbox-title>.chatbox-title--row>.chatbox-title__text {
@@ -1022,6 +1065,7 @@ converse-root>converse-chats>converse-muc>.flyout>converse-muc-heading>.chatbox-
     font-style: normal;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>converse-chat-heading>.chatbox-title>.chatbox-title__buttons,
 converse-root>converse-chats>converse-muc>.flyout>converse-muc-heading>.chatbox-title>.chatbox-title__buttons {
 
     display: flex;
@@ -1031,6 +1075,7 @@ converse-root>converse-chats>converse-muc>.flyout>converse-muc-heading>.chatbox-
     margin-left: 5px;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>converse-chat-heading>.chatbox-title>.chatbox-title__buttons>.chatbox-btn,
 converse-root>converse-chats>converse-muc>.flyout>converse-muc-heading>.chatbox-title>.chatbox-title__buttons>.chatbox-btn {
 
     margin-left: 5px;
@@ -1039,14 +1084,26 @@ converse-root>converse-chats>converse-muc>.flyout>converse-muc-heading>.chatbox-
     color: var(--cg-white);
 }
 
+converse-root>converse-chats>converse-chat>.flyout>converse-chat-heading>.chatbox-title>.chatbox-title__buttons>.chatbox-btn:hover,
 converse-root>converse-chats>converse-muc>.flyout>converse-muc-heading>.chatbox-title>.chatbox-title__buttons>.chatbox-btn:hover {
 
     color: var(--cg-yellow);
 }
 
+converse-root>converse-chats>converse-chat>.flyout>converse-chat-heading>.chatbox-title>.chatbox-title__buttons>.toggle-chatbox-button::before,
 converse-root>converse-chats>converse-muc>.flyout>converse-muc-heading>.chatbox-title>.chatbox-title__buttons>.toggle-chatbox-button::before {
 
     content: "\23AF";
+}
+
+converse-root>converse-chats>converse-chat>.flyout>converse-chat-heading>.chatbox-title>.chatbox-title__buttons>.close-chatbox-button::before {
+
+    content: '\2348';
+}
+
+converse-root>converse-chats>converse-chat>.flyout>converse-chat-heading>.chatbox-title>.chatbox-title__buttons>.show-user-details-modal {
+
+    display: none;
 }
 
 converse-root>converse-chats>converse-muc>.flyout>converse-muc-heading>.chatbox-title>.chatbox-title__buttons>converse-dropdown>button {
@@ -1100,6 +1157,16 @@ converse-root>converse-chats>converse-muc>.flyout>converse-muc-heading>.chatbox-
     display: none;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    flex: 1;
+    overflow: hidden;
+}
+
 converse-root>converse-chats>converse-muc>.flyout>.chat-body {
 
     display: block;
@@ -1121,12 +1188,14 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
     height: 100%;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.chat-content,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content {
 
     flex: 3;
     overflow: hidden;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.chat-content>converse-chat-content,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content {
 
     display: flex;
@@ -1136,17 +1205,20 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
     overflow: scroll;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.chat-content>converse-chat-content>.chat-content__notifications,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>.chat-content__notifications {
 
     display: none;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.chat-content>converse-chat-content>converse-message-history>.date-separator>.separator,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>.date-separator>.separator {
 
     border: none;
     border-bottom: 1px var(--cg-lighter-grey) solid;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.chat-content>converse-chat-content>converse-message-history>.date-separator>.separator-text,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>.date-separator>.separator-text {
 
     display: block;
@@ -1154,12 +1226,14 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
     color: var(--cg-blue);
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.chat-content>converse-chat-content>converse-message-history>converse-chat-message,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message {
 
     display: block;
     margin-bottom: 5px;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message {
 
     display: flex;
@@ -1168,24 +1242,28 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
     align-items: flex-start;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.show-msg-author-modal,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.show-msg-author-modal {
 
     margin-right: 5px;
     cursor: pointer;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.show-msg-author-modal>converse-avatar,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.show-msg-author-modal>converse-avatar {
 
     display: block;
     height: 40px;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.chat-msg__content,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.chat-msg__content {
 
     overflow: hidden;
     overflow-wrap: break-word;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.chat-msg__content>.chat-msg__heading>.chat-msg__author,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.chat-msg__content>.chat-msg__heading>.chat-msg__author {
 
     font-size: 16px;
@@ -1193,6 +1271,7 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
     cursor: pointer;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.chat-msg__content>.chat-msg__heading>.chat-msg__author:hover,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.chat-msg__content>.chat-msg__heading>.chat-msg__author:hover {
 
     color: var(--cg-shaded-yellow);
@@ -1209,32 +1288,38 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
     color: var(--cg-lighter-grey);
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.chat-msg__content>.chat-msg__heading>.chat-msg__time,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.chat-msg__content>.chat-msg__heading>.chat-msg__time {
 
     font-size: 14px;
     color: var(--cg-blue);
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.chat-msg__content>.chat-msg__body,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.chat-msg__content>.chat-msg__body {
 
     font-size: 14px;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.chat-msg__content>.chat-msg__body>.chat-msg__message>span>converse-icon,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.chat-msg__content>.chat-msg__body>.chat-msg__message>span>converse-icon {
 
     fill: var(--cg-blue);
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.chat-msg__content>.chat-msg__body>.chat-msg__message>span>converse-chat-message-body>a,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.chat-msg__content>.chat-msg__body>.chat-msg__message>span>converse-chat-message-body>a {
 
     color: var(--cg-blue);
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.chat-msg__content>.chat-msg__body>.chat-msg__message>span>converse-chat-message-body>.styling-directive,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.chat-msg__content>.chat-msg__body>.chat-msg__message>span>converse-chat-message-body>.styling-directive {
 
     color: var(--cg-blue);
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.chat-msg__content>.chat-msg__body>.chat-msg__message>span>converse-chat-message-body>code,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.chat-msg__content>.chat-msg__body>.chat-msg__message>span>converse-chat-message-body>code {
 
     color: var(--cg-green);
@@ -1245,6 +1330,7 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
     color: var(--cg-yellow);
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.chat-msg__content>.chat-msg__body>.chat-msg__message>span>converse-chat-message-body>blockquote,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.chat-msg__content>.chat-msg__body>.chat-msg__message>span>converse-chat-message-body>blockquote {
 
     margin: 0;
@@ -1254,27 +1340,32 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
     color: var(--cg-green);
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.chat-msg__content>.chat-msg__body>.chat-msg__message>span>converse-chat-message-body>.emoji,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.chat-msg__content>.chat-msg__body>.chat-msg__message>span>converse-chat-message-body>.emoji {
 
     width: 20px;
     height: 20px;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.chat-msg__content--action,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.chat-msg__content--action {
 
     font-style: italic;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.chat-msg__content--action>.chat-msg__body>.chat-msg__message>time,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message>.chat-msg__content--action>.chat-msg__body>.chat-msg__message>time {
 
     display: none;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.separator,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.separator {
 
     display: block;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.separator>hr,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.separator>hr {
 
     display: block;
@@ -1282,6 +1373,7 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
     border-bottom: 1px var(--cg-blue) solid;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.separator>span,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.separator>span {
 
     display: block;
@@ -1289,6 +1381,7 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
     color: var(--cg-blue);
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.bottom-panel,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel {
 
     display: flex;
@@ -1301,6 +1394,7 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
     background-color: var(--cg-grey);
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.bottom-panel>.new-msgs-indicator,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>.new-msgs-indicator {
 
     position: fixed;
@@ -1314,6 +1408,7 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
     cursor: pointer;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.bottom-panel>.new-msgs-indicator:hover,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>.new-msgs-indicator:hover {
 
     background-color: var(--cg-lighter-grey);
@@ -1321,6 +1416,7 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
     color: var(--cg-shaded-yellow);
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.bottom-panel>converse-chat-toolbar,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar {
 
     display: block;
@@ -1328,6 +1424,7 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
     background-color: var(--cg-light-grey);
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.bottom-panel>converse-chat-toolbar>.toolbar-buttons,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons {
 
     display: flex;
@@ -1335,6 +1432,7 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
     justify-content: space-between;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.toggle-emojis,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.toggle-emojis {
 
     padding: 0;
@@ -1344,17 +1442,21 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
     cursor: pointer;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.toggle-emojis:hover,
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.toggle-emojis[aria-expanded="true"],
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.toggle-emojis:hover,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.toggle-emojis[aria-expanded="true"] {
 
     fill: var(--cg-yellow);
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu {
 
     display: none;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu.show,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu.show {
 
     display: flex;
@@ -1367,6 +1469,7 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
     background-color: var(--cg-light-grey);    
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>.emoji-picker__header>.emoji-search,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>.emoji-picker__header>.emoji-search {
 
     width: 240px;
@@ -1379,6 +1482,7 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
     color: var(--cg-white);
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>.emoji-picker__header>ul,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>.emoji-picker__header>ul {
 
     display: flex;
@@ -1389,6 +1493,7 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
     list-style: none;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>.emoji-picker__header>ul>.emoji-category,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>.emoji-picker__header>ul>.emoji-category {
 
     display: block;
@@ -1396,11 +1501,13 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
     border-bottom: 2px transparent solid;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>.emoji-picker__header>ul>.emoji-category.picked,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>.emoji-picker__header>ul>.emoji-category.picked {
 
     border-bottom: 2px var(--cg-yellow) solid;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>.emoji-picker__header>ul>.emoji-category>.pick-category,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>.emoji-picker__header>ul>.emoji-category>.pick-category {
 
     display: block;
@@ -1408,6 +1515,7 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
     height: 20px;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>.emoji-picker__header>ul>.emoji-category>.pick-category>.emoji,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>.emoji-picker__header>ul>.emoji-category>.pick-category>.emoji {
 
     display: block;
@@ -1415,6 +1523,7 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
     height: 20px;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>converse-emoji-picker-content,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>converse-emoji-picker-content {
 
     display: block;
@@ -1422,6 +1531,7 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
     overflow: hidden;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>converse-emoji-picker-content>.emoji-picker__lists,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>converse-emoji-picker-content>.emoji-picker__lists {
 
     display: block;
@@ -1429,11 +1539,13 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
     overflow: hidden;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>converse-emoji-picker-content>.emoji-picker__lists>.emojis-lists__container--search,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>converse-emoji-picker-content>.emoji-picker__lists>.emojis-lists__container--search {
 
     margin-top: 10px;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>converse-emoji-picker-content>.emoji-picker__lists>.emoji-lists__container,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>converse-emoji-picker-content>.emoji-picker__lists>.emoji-lists__container {
 
     display: flex;
@@ -1446,11 +1558,13 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
     overflow: scroll;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>converse-emoji-picker-content>.emoji-picker__lists>.emoji-lists__container[hidden],
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>converse-emoji-picker-content>.emoji-picker__lists>.emoji-lists__container[hidden] {
 
     display: none;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>converse-emoji-picker-content>.emoji-picker__lists>.emoji-lists__container>.emoji-category__heading,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>converse-emoji-picker-content>.emoji-picker__lists>.emoji-lists__container>.emoji-category__heading {
 
     display: block;
@@ -1463,6 +1577,7 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
     color: var(--cg-yellow);
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>converse-emoji-picker-content>.emoji-picker__lists>.emoji-lists__container>.emoji-picker,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>converse-emoji-picker-content>.emoji-picker__lists>.emoji-lists__container>.emoji-picker {
 
     display: flex;
@@ -1476,6 +1591,7 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
     list-style: none;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>converse-emoji-picker-content>.emoji-picker__lists>.emoji-lists__container>.emoji-picker>.insert-emoji>a>.emoji,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>converse-emoji-picker-content>.emoji-picker__lists>.emoji-lists__container>.emoji-picker>.insert-emoji>a>.emoji {
 
     display: block;
@@ -1483,11 +1599,13 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
     height: 20px;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>.emoji-skintone-picker,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>.emoji-skintone-picker {
 
     margin: 5px;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>.emoji-skintone-picker>ul,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>.emoji-skintone-picker>ul {
 
     display: flex;
@@ -1498,6 +1616,7 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
     list-style: none;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>.emoji-skintone-picker>ul>.emoki-skintone,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>.emoji-skintone-picker>ul>.emoji-skintone {
 
     display: block;
@@ -1505,11 +1624,13 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
     border: 2px transparent solid;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>.emoji-skintone-picker>ul>.emoji-skintone.picked,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>.emoji-skintone-picker>ul>.emoji-skintone.picked {
 
     border: 2px var(--cg-yellow) solid;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>.emoji-skintone-picker>ul>.emoji-skintone>.pick-skintone,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>.emoji-skintone-picker>ul>.emoji-skintone>.pick-skintone {
 
     display: block;
@@ -1517,6 +1638,7 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
     height: 20px;
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>.emoji-skintone-picker>ul>.emoji-skintone>.pick-skintone>.emoji,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>converse-emoji-dropdown>.dropup>.dropdown-menu>converse-emoji-picker>.emoji-skintone-picker>ul>.emoji-skintone>.pick-skintone>.emoji {
 
     display: block;
@@ -1546,6 +1668,7 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
 }
 /***********/
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.bottom-panel>converse-message-form,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-muc-message-form {
 
     display: block;
@@ -1554,6 +1677,7 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
     background-color: var(--cg-light-grey);
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.bottom-panel>converse-message-form>.sendXMPPMessage,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-muc-message-form>.sendXMPPMessage {
 
     height: 100%;
@@ -1605,6 +1729,7 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
     color: var(--cg-lighter-grey);
 }
 
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.bottom-panel>converse-message-form>.sendXMPPMessage>.chat-textarea,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-muc-message-form>.sendXMPPMessage>.suggestion-box>.chat-textarea {
 
     display: block;
