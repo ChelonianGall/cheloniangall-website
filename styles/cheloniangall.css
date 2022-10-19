@@ -62,6 +62,12 @@
     100% {transform: rotate(360deg);}
 }
 
+@keyframes cg-pulse {
+    
+    from {color: var(--cg-white);}
+    to {color: var(--cg-yellow);}
+}
+
 .hidden, .collapsed, .visually-hidden {
 
     display: none !important;
@@ -321,9 +327,8 @@ html>body>#right-column>#account_form>#switch_to_sign_up>button:hover {
 - Invite
 - Moderation
 - Destroy
-- Reduced room/tabs + notifs
+- Closing one tab closes all the tabs on its right.
 - User infos
-- Message author modal
 */
 
 converse-root {
@@ -347,6 +352,9 @@ converse-root>converse-chats>converse-minimized-chats {
     order: 1;
     display: block;
     margin: 10px;
+    margin-bottom: 0;
+    padding-bottom: 10px;
+    overflow-x: scroll;
 }
 
 converse-root>converse-chats>converse-minimized-chats>#minimized-chats>#toggle-minimized-chats {
@@ -391,9 +399,19 @@ converse-root>converse-chats>converse-minimized-chats>#minimized-chats>.minimize
     cursor: pointer;
 }
 
+converse-root>converse-chats>converse-minimized-chats>#minimized-chats>.minimized-chats-flyout>converse-minimized-chat:not([num_unread="0"])>.chat-head>.restore-chat {
+
+    animation: cg-pulse 0.5s infinite;
+}
+
 converse-root>converse-chats>converse-minimized-chats>#minimized-chats>.minimized-chats-flyout>converse-minimized-chat>.chat-head>.restore-chat:hover {
 
     color: var(--cg-yellow);
+}
+
+converse-root>converse-chats>converse-minimized-chats>#minimized-chats>.minimized-chats-flyout>converse-minimized-chat>.chat-head>.restore-chat>.message-count {
+
+    display: none;
 }
 
 converse-root>converse-chats>converse-minimized-chats>#minimized-chats>.minimized-chats-flyout>converse-minimized-chat>.chat-head>.close-chatbox-button {
@@ -1231,6 +1249,12 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
 
     display: block;
     margin-bottom: 5px;
+}
+
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.chat-info,
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.chat-info {
+
+    display: none !important;
 }
 
 converse-root>converse-chats>converse-chat>.flyout>.chat-body>.chat-content>converse-chat-content>converse-message-history>converse-chat-message>.message,
@@ -2554,6 +2578,57 @@ converse-root>#converse-modals>#converse-client-info-modal>.modal-dialog>.modal-
 converse-root>#converse-modals>#converse-client-info-modal>.modal-dialog>.modal-content>.modal-body>.tab-content>#commands-tabpanel>converse-adhoc-commands>.converse-form>.form-group:nth-child(3)>.list-group>.room-item>form>fieldset:last-child>.btn:first-child {
 
     margin-right: 5px;
+}
+
+converse-root>#converse-modals>#muc-occupant {}
+
+converse-root>#converse-modals>#muc-occupant>.modal-dialog {}
+
+converse-root>#converse-modals>#muc-occupant>.modal-dialog>.modal-content {}
+
+converse-root>#converse-modals>#muc-occupant>.modal-dialog>.modal-content>.modal-header {}
+
+converse-root>#converse-modals>#muc-occupant>.modal-dialog>.modal-content>.modal-body {}
+
+converse-root>#converse-modals>#muc-occupant>.modal-dialog>.modal-content>.modal-body>.row {}
+
+converse-root>#converse-modals>#muc-occupant>.modal-dialog>.modal-content>.modal-body>.row>.col-auto {
+
+    width: fit-content;
+    margin: auto;
+}
+
+converse-root>#converse-modals>#muc-occupant>.modal-dialog>.modal-content>.modal-body>.row>.col-auto>converse-avatar {
+
+    display: block;
+    width: fit-content;
+    height: 120px;
+}
+
+converse-root>#converse-modals>#muc-occupant>.modal-dialog>.modal-content>.modal-body>.row>.col {
+
+    margin-top: 10px;
+}
+
+converse-root>#converse-modals>#muc-occupant>.modal-dialog>.modal-content>.modal-body>.row>.col>.occupant-details {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+converse-root>#converse-modals>#muc-occupant>.modal-dialog>.modal-content>.modal-body>.row>.col>.occupant-details>li {
+
+    text-align: center;
+}
+
+converse-root>#converse-modals>#muc-occupant>.modal-dialog>.modal-content>.modal-footer {
+
+    display: none;
 }
 
 converse-root>converse-fontawesome {
