@@ -2730,6 +2730,24 @@ converse-root>#converse-modals>#confirm-modal>.modal-dialog>.modal-content>.moda
     margin: 10px 0 10px 0;
 }
 
+converse-root>#converse-modals>#confirm-modal>.modal-dialog>.modal-content>.modal-body>.converse-form>.form-group>label>.form-control {
+
+    display: block;
+    width: 258px;
+    height: 30px;
+    margin: 5px 0 5px 0;
+    padding: 0 10px 0 10px;
+    border: none;
+    background-color: var(--cg-lighter-grey);
+    accent-color: var(--cg-yellow);
+    color: var(--cg-white);
+}
+
+converse-root>#converse-modals>#confirm-modal>.modal-dialog>.modal-content>.modal-body>.converse-form>.form-group>label>.form-control:last-child {
+
+    margin-bottom: 10px;
+}
+
 converse-root>#converse-modals>#confirm-modal>.modal-dialog>.modal-content>.modal-body>.converse-form>.form-group:last-child {
 
     display: flex;
