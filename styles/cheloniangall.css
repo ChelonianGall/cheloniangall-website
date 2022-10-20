@@ -1686,6 +1686,7 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
 }
 
 /*TEMPORARY*/
+converse-root>converse-chats>converse-chat>.flyout>.chat-body>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>button[title="Choose a file to send"],
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>button[title="Choose a file to send"] {
 
     display: none;
@@ -2580,18 +2581,6 @@ converse-root>#converse-modals>#converse-client-info-modal>.modal-dialog>.modal-
     margin-right: 5px;
 }
 
-converse-root>#converse-modals>#muc-occupant {}
-
-converse-root>#converse-modals>#muc-occupant>.modal-dialog {}
-
-converse-root>#converse-modals>#muc-occupant>.modal-dialog>.modal-content {}
-
-converse-root>#converse-modals>#muc-occupant>.modal-dialog>.modal-content>.modal-header {}
-
-converse-root>#converse-modals>#muc-occupant>.modal-dialog>.modal-content>.modal-body {}
-
-converse-root>#converse-modals>#muc-occupant>.modal-dialog>.modal-content>.modal-body>.row {}
-
 converse-root>#converse-modals>#muc-occupant>.modal-dialog>.modal-content>.modal-body>.row>.col-auto {
 
     width: fit-content;
@@ -2627,6 +2616,53 @@ converse-root>#converse-modals>#muc-occupant>.modal-dialog>.modal-content>.modal
 }
 
 converse-root>#converse-modals>#muc-occupant>.modal-dialog>.modal-content>.modal-footer {
+
+    display: none;
+}
+
+converse-root>#converse-modals>#user-details-modal[aria-hidden="true"] {
+
+    display: none;
+}
+
+converse-root>#converse-modals>#user-details-modal>.modal-dialog>.modal-content>.modal-header {
+
+    margin-bottom: 10px;
+}
+
+converse-root>#converse-modals>#user-details-modal>.modal-dialog>.modal-content>.modal-header>#user-details-modal-label {
+
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+converse-root>#converse-modals>#user-details-modal>.modal-dialog>.modal-content>.modal-body>.mb-4 {
+
+    display: block;
+    width: fit-content;
+    height: 120px;
+    margin: auto;
+}
+
+converse-root>#converse-modals>#user-details-modal>.modal-dialog>.modal-content>.modal-body>p {
+
+    margin: 10px 0 0 0;
+    text-align: center;
+}
+
+converse-root>#converse-modals>#user-details-modal>.modal-dialog>.modal-content>.modal-body>p>a {
+
+    text-decoration: none;
+    color: var(--cg-yellow);
+}
+
+converse-root>#converse-modals>#user-details-modal>.modal-dialog>.modal-content>.modal-body>p>a:hover {
+
+    color: var(--cg-shaded-yellow);
+}
+
+converse-root>#converse-modals>#user-details-modal>.modal-dialog>.modal-content>.modal-footer {
 
     display: none;
 }
