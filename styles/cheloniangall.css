@@ -320,7 +320,6 @@ html>body>#right-column>#account_form>#switch_to_sign_up>button:hover {
 }
 
 /*
-- Choose nickname *2?
 - Room configuration
 - Invite
 - Moderation
@@ -1187,6 +1186,57 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body {
     display: block;
     flex: 1;
     overflow: hidden;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-nickname-form>.muc-nickname-form>.converse-form>.form-group {
+
+    padding: 0;
+    border: none;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-nickname-form>.muc-nickname-form>.converse-form>.form-group>label {
+
+    display: block;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-nickname-form>.muc-nickname-form>.converse-form>.form-group>.validation-message {
+
+    margin: 0 0 10px 0;
+    text-align: center;
+    color: var(--cg-red);
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-nickname-form>.muc-nickname-form>.converse-form>.form-group>.form-control {
+
+    display: block;
+    height: 30px;
+    margin: 0 auto 10px auto;
+    padding: 0 10px 0 10px;
+    border: none;
+    background-color: var(--cg-lighter-grey);
+    accent-color: var(--cg-yellow);
+    color: var(--cg-white);
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-nickname-form>.muc-nickname-form>.converse-form>.form-group>.btn {
+
+    display: block;
+    height: 30px;
+    padding: 0 10px 0 10px;
+    margin: auto;
+    border: none;
+    background-color: var(--cg-yellow);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--cg-lighter-grey);
+    cursor: pointer;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-nickname-form>.muc-nickname-form>.converse-form>.form-group>.btn:hover {
+
+    background-color: var(--cg-shaded-yellow);
 }
 
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea {
@@ -2697,6 +2747,67 @@ converse-root>#converse-modals>#confirm-modal>.modal-dialog>.modal-content>.moda
 converse-root>#converse-modals>#confirm-modal>.modal-dialog>.modal-content>.modal-body>.converse-form>.form-group:last-child>.btn:hover {
 
     background-color: var(--cg-shaded-yellow);
+}
+
+converse-root>#converse-modals>#change-nickname-modal>.modal-dialog>.modal-content>.modal-header>.modal-title {
+
+    font-size: 18px;
+}
+
+converse-root>#converse-modals>#change-nickname-modal>.modal-dialog>.modal-content>.modal-body>converse-muc-nickname-form>.muc-nickname-form>.converse-form>.form-group {
+
+    padding: 0;
+    border: none;
+}
+
+converse-root>#converse-modals>#change-nickname-modal>.modal-dialog>.modal-content>.modal-body>converse-muc-nickname-form>.muc-nickname-form>.converse-form>.form-group>label {
+
+    display: block;
+    margin-bottom: 10px;
+}
+
+converse-root>#converse-modals>#change-nickname-modal>.modal-dialog>.modal-content>.modal-body>converse-muc-nickname-form>.muc-nickname-form>.converse-form>.form-group>.validation-message {
+
+    display: none;
+    margin: 0;
+}
+
+converse-root>#converse-modals>#change-nickname-modal>.modal-dialog>.modal-content>.modal-body>converse-muc-nickname-form>.muc-nickname-form>.converse-form>.form-group>.form-control {
+
+    display: block;
+    height: 30px;
+    margin: 0 auto 10px auto;
+    padding: 0 10px 0 10px;
+    border: none;
+    background-color: var(--cg-lighter-grey);
+    accent-color: var(--cg-yellow);
+    color: var(--cg-white);
+}
+
+converse-root>#converse-modals>#change-nickname-modal>.modal-dialog>.modal-content>.modal-body>converse-muc-nickname-form>.muc-nickname-form>.converse-form>.form-group>.btn {
+
+    display: block;
+    height: 30px;
+    padding: 0 10px 0 10px;
+    margin: auto;
+    border: none;
+    background-color: var(--cg-yellow);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--cg-lighter-grey);
+    cursor: pointer;
+}
+
+converse-root>#converse-modals>#change-nickname-modal>.modal-dialog>.modal-content>.modal-body>converse-muc-nickname-form>.muc-nickname-form>.converse-form>.form-group>.btn:hover {
+
+    background-color: var(--cg-shaded-yellow);
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-nickname-form {
+
+    display: block;
+    padding: 10px;
+    border: 1px var(--cg-yellow) solid;
 }
 
 converse-root>converse-fontawesome {
