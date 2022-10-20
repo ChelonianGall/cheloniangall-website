@@ -321,7 +321,6 @@ html>body>#right-column>#account_form>#switch_to_sign_up>button:hover {
 
 /*
 - Room configuration
-- Invite
 - Moderation
 - Destroy
 - Closing one tab closes all the tabs on its right.
@@ -1186,6 +1185,13 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body {
     display: block;
     flex: 1;
     overflow: hidden;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-nickname-form {
+
+    display: block;
+    padding: 10px;
+    border: 1px var(--cg-yellow) solid;
 }
 
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-nickname-form>.muc-nickname-form>.converse-form>.form-group {
@@ -2803,11 +2809,101 @@ converse-root>#converse-modals>#change-nickname-modal>.modal-dialog>.modal-conte
     background-color: var(--cg-shaded-yellow);
 }
 
-converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-nickname-form {
+converse-root>#converse-modals>#muc-invite-modal>.modal-dialog>.modal-content>.modal-header {
+
+    margin-bottom: 10px;
+}
+
+converse-root>#converse-modals>#muc-invite-modal>.modal-dialog>.modal-content>.modal-header>.modal-title {
+
+    font-size: 12px;
+}
+
+converse-root>#converse-modals>#muc-invite-modal>.modal-dialog>.modal-content>.modal-body>.modal-alert {
+
+    display: none;
+}
+
+converse-root>#converse-modals>#muc-invite-modal>.modal-dialog>.modal-content>.modal-body>.suggestion-box>form>.form-group:not(:last-child) {
+
+    margin-bottom: 10px;
+}
+
+converse-root>#converse-modals>#muc-invite-modal>.modal-dialog>.modal-content>.modal-body>.suggestion-box>form>.form-group>.suggestion-box__input {
+
+    height: 30px;
+    padding: 0 10px 0 10px;
+    border: none;
+    background-color: var(--cg-lighter-grey);
+    accent-color: var(--cg-yellow);
+    color: var(--cg-white);
+}
+
+converse-root>#converse-modals>#muc-invite-modal>.modal-dialog>.modal-content>.modal-body>.suggestion-box>form>.form-group>.suggestion-box__results:not([hidden]) {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0 0 0;
+    padding: 0;
+    list-style: none;
+    background-color: var(--cg-light-grey);
+}
+
+converse-root>#converse-modals>#muc-invite-modal>.modal-dialog>.modal-content>.modal-body>.suggestion-box>form>.form-group>.suggestion-box__results>li {
 
     display: block;
+    width: 268px;
+    padding: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    cursor: pointer;
+}
+
+converse-root>#converse-modals>#muc-invite-modal>.modal-dialog>.modal-content>.modal-body>.suggestion-box>form>.form-group>.suggestion-box__results>li:hover {
+
+    background-color: var(--cg-lighter-grey);
+    color: var(--cg-yellow);
+}
+
+converse-root>#converse-modals>#muc-invite-modal>.modal-dialog>.modal-content>.modal-body>.suggestion-box>form>.form-group>.suggestion-box__results>li>mark {
+
+    background-color: var(--cg-yellow);
+}
+
+converse-root>#converse-modals>#muc-invite-modal>.modal-dialog>.modal-content>.modal-body>.suggestion-box>form>.form-group>textarea {
+
+    display: block;
+    width: 250px;
+    height: 38px !important;
+    margin: 5px 0 0 0;
     padding: 10px;
-    border: 1px var(--cg-yellow) solid;
+    border: none;
+    resize: none;
+    background-color: var(--cg-lighter-grey);
+    accent-color: var(--cg-yellow);
+    color: var(--cg-white);
+}
+
+converse-root>#converse-modals>#muc-invite-modal>.modal-dialog>.modal-content>.modal-body>.suggestion-box>form>.form-group>.btn {
+
+    display: block;
+    height: 30px;
+    padding: 0 10px 0 10px;
+    margin: auto;
+    border: none;
+    background-color: var(--cg-yellow);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--cg-lighter-grey);
+    cursor: pointer;
+}
+
+converse-root>#converse-modals>#muc-invite-modal>.modal-dialog>.modal-content>.modal-body>.suggestion-box>form>.form-group>.btn:hover {
+
+    background-color: var(--cg-shaded-yellow);
 }
 
 converse-root>converse-fontawesome {
