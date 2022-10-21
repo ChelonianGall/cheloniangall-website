@@ -320,7 +320,6 @@ html>body>#right-column>#account_form>#switch_to_sign_up>button:hover {
 }
 
 /*
-- Room configuration
 - Emotes highlighting?
 - Closing one tab closes all the tabs on its right.
 */
@@ -1246,6 +1245,115 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-nickna
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-nickname-form>.muc-nickname-form>.converse-form>.form-group>.btn:hover {
 
     background-color: var(--cg-shaded-yellow);
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-config-form {
+
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-config-form>.converse-form {
+
+    display: block;
+    width: 100%;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-config-form>.converse-form>.form-group {
+
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-config-form>.converse-form>.form-group>legend {
+
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-config-form>.converse-form>.form-group>.form-help {
+
+    display: none;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-config-form>.converse-form>.form-group>.form-group {
+
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-config-form>.converse-form>.form-group>.form-group>.hidden-username {
+
+    display: none;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-config-form>.converse-form>.form-group>.form-group>select:not([multiple]),
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-config-form>.converse-form>.form-group>.form-group>.form-control[type="text"],
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-config-form>.converse-form>.form-group>.form-group>.form-control[type="password"] {
+
+    height: 30px;
+    margin: 2px;
+    padding: 0 10px 0 10px;
+    border: none;
+    background-color: var(--cg-lighter-grey);
+    accent-color: var(--cg-yellow);
+    color: var(--cg-white);
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-config-form>.converse-form>.form-group>.form-group>input[type="checkbox"] {
+
+    accent-color: var(--cg-yellow);
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-config-form>.converse-form>.form-group>.form-group>select[multiple] {
+
+    display: block;
+    border: none;
+    background-color: var(--cg-lighter-grey);
+    accent-color: var(--cg-yellow);
+    color: var(--cg-white);
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-config-form>.converse-form>.form-group>.form-group>select[multiple]>option {
+
+    text-align: center;
+    cursor: pointer;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-config-form>.converse-form>fieldset:not(.form-group) {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 10px 0 10px 0;
+    padding: 0;
+    border: none;
+}
+
+converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-config-form>.converse-form>fieldset:not(.form-group)>.btn {
+
+    flex-grow: 2;
+    height: 30px;
+    padding: 0 10px 0 10px;
+    border: none;
+    background-color: var(--cg-yellow);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--cg-lighter-grey);
+    cursor: pointer;
 }
 
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea {
