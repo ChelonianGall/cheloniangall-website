@@ -322,7 +322,8 @@ html>body>#right-column>#account_form>#switch_to_sign_up>button:hover {
 /*
 - Room configuration
 - Moderation
-- Destroy
+- Emotes highlighting?
+- Gap when no reduced chats.
 - Closing one tab closes all the tabs on its right.
 */
 
@@ -2922,6 +2923,203 @@ converse-root>#converse-modals>#muc-invite-modal>.modal-dialog>.modal-content>.m
 converse-root>#converse-modals>#muc-invite-modal>.modal-dialog>.modal-content>.modal-body>.suggestion-box>form>.form-group>.btn:hover {
 
     background-color: var(--cg-shaded-yellow);
+}
+
+converse-root>#converse-modals>#converse-modtools-modal:not(.show) {
+
+    display: none;
+}
+
+converse-root>#converse-modals>#converse-modtools-modal>.modal-dialog>.modal-content>.modal-body>converse-modtools>.nav {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px 0 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+converse-root>#converse-modals>#converse-modtools-modal>.modal-dialog>.modal-content>.modal-body>converse-modtools>.nav>.nav-item {
+
+    flex-grow: 2;
+    text-align: center;
+}
+
+converse-root>#converse-modals>#converse-modtools-modal>.modal-dialog>.modal-content>.modal-body>converse-modtools>.nav>.nav-item>a {
+
+    display: block;
+    padding: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--cg-yellow);
+}
+
+converse-root>#converse-modals>#converse-modtools-modal>.modal-dialog>.modal-content>.modal-body>converse-modtools>.nav>.nav-item>a:hover {
+
+    color: var(--cg-shaded-yellow);
+}
+
+converse-root>#converse-modals>#converse-modtools-modal>.modal-dialog>.modal-content>.modal-body>converse-modtools>.nav>.nav-item>a.active {
+
+    background-color: var(--cg-light-grey);
+}
+
+converse-root>#converse-modals>#converse-modtools-modal>.modal-dialog>.modal-content>.modal-body>converse-modtools>.tab-content>.tab-pane {
+
+    display: none;
+}
+
+converse-root>#converse-modals>#converse-modtools-modal>.modal-dialog>.modal-content>.modal-body>converse-modtools>.tab-content>.tab-pane.active {
+
+    display: block;
+    padding: 10px;
+    background-color: var(--cg-light-grey);
+}
+
+converse-root>#converse-modals>#converse-modtools-modal>.modal-dialog>.modal-content>.modal-body>converse-modtools>.tab-content>.tab-pane>form>p {
+
+    margin: 0 0 10px 0;
+}
+
+converse-root>#converse-modals>#converse-modtools-modal>.modal-dialog>.modal-content>.modal-body>converse-modtools>.tab-content>.tab-pane>form>.form-group>label {
+
+    display: block;
+    margin-bottom: 5px;
+}
+
+converse-root>#converse-modals>#converse-modtools-modal>.modal-dialog>.modal-content>.modal-body>converse-modtools>.tab-content>.tab-pane>form>.form-group>.row {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+converse-root>#converse-modals>#converse-modtools-modal>.modal-dialog>.modal-content>.modal-body>converse-modtools>.tab-content>.tab-pane>form>.form-group>.row>.col {
+
+    flex-grow: 2;
+}
+
+converse-root>#converse-modals>#converse-modtools-modal>.modal-dialog>.modal-content>.modal-body>converse-modtools>.tab-content>.tab-pane>form>.form-group>.row>.col>.custom-select {
+
+    display: block;
+    width: 100%;
+    height: 30px;
+    border: none;
+    background-color: var(--cg-lighter-grey);
+    accent-color: var(--cg-yellow);
+    text-align: center;
+    color: var(--cg-white);
+}
+
+converse-root>#converse-modals>#converse-modtools-modal>.modal-dialog>.modal-content>.modal-body>converse-modtools>.tab-content>.tab-pane>form>.form-group>.row>.col>.btn {
+
+    display: block;
+    width: 100%;
+    height: 30px;
+    border: none;
+    background-color: var(--cg-yellow);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--cg-lighter-grey);
+    cursor: pointer;
+}
+
+converse-root>#converse-modals>#converse-modtools-modal>.modal-dialog>.modal-content>.modal-body>converse-modtools>.tab-content>.tab-pane>form>.form-group>.row>.col>.btn:hover {
+
+    background-color: var(--cg-shaded-yellow);
+}
+
+converse-root>#converse-modals>#converse-modtools-modal>.modal-dialog>.modal-content>.modal-body>converse-modtools>.tab-content>.tab-pane>.scrollable-container>.list-group {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 5px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+converse-root>#converse-modals>#converse-modtools-modal>.modal-dialog>.modal-content>.modal-body>converse-modtools>.tab-content>.tab-pane>.scrollable-container>.list-group>.list-group-item {
+
+    display: block;
+    width: 238px;
+    padding: 10px;
+    background-color: var(--cg-grey);
+}
+
+converse-root>#converse-modals>#converse-modtools-modal>.modal-dialog>.modal-content>.modal-body>converse-modtools>.tab-content>.tab-pane>.scrollable-container>.list-group>.list-group-item:first-child {
+
+    margin-top: 10px;
+}
+
+converse-root>#converse-modals>#converse-modtools-modal>.modal-dialog>.modal-content>.modal-body>converse-modtools>.tab-content>.tab-pane>.scrollable-container>.list-group>.list-group-item>.list-group {
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+converse-root>#converse-modals>#converse-modtools-modal>.modal-dialog>.modal-content>.modal-body>converse-modtools>.tab-content>.tab-pane>.scrollable-container>.list-group>.list-group-item>.list-group>.list-group-item>div {
+
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+converse-root>#converse-modals>#converse-modtools-modal>.modal-dialog>.modal-content>.modal-body>converse-modtools>.tab-content>.tab-pane>.scrollable-container>.list-group>.list-group-item>.list-group>.list-group-item>div>a>converse-icon {
+
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    fill: var(--cg-white);
+}
+
+converse-root>#converse-modals>#converse-modtools-modal>.modal-dialog>.modal-content>.modal-body>converse-modtools>.tab-content>.tab-pane>.scrollable-container>.list-group>.list-group-item>.list-group>.list-group-item>div>a>converse-icon:hover {
+
+    fill: var(--cg-yellow);
+}
+
+converse-root>#converse-modals>#converse-modtools-modal>.modal-dialog>.modal-content>.modal-body>converse-modtools>.tab-content>.tab-pane>.scrollable-container>.list-group>.list-group-item>.list-group>.list-group-item>form>.form-group>.row>.col>select {
+
+    display: inline-block;
+    height: 30px;
+    margin: 5px;
+    border: none;
+    background-color: var(--cg-lighter-grey);
+    accent-color: var(--cg-yellow);
+    text-align: center;
+    color: var(--cg-white);
+}
+
+converse-root>#converse-modals>#converse-modtools-modal>.modal-dialog>.modal-content>.modal-body>converse-modtools>.tab-content>.tab-pane>.scrollable-container>.list-group>.list-group-item>.list-group>.list-group-item>form>.form-group>.row>.col>.form-control {
+
+    display: inline-block;
+    margin: 0 5px 5px 5px;
+    height: 30px;
+    padding: 0 10px 0 10px;
+    border: none;
+    background-color: var(--cg-lighter-grey);
+    accent-color: var(--cg-yellow);
+    color: var(--cg-white);
+}
+
+converse-root>#converse-modals>#converse-modtools-modal>.modal-dialog>.modal-content>.modal-body>converse-modtools>.tab-content>.tab-pane>.scrollable-container>.list-group>.list-group-item>.list-group>.list-group-item>form>.form-group>.btn {
+
+    display: block;
+    width: 100%;
+    height: 30px;
+    border: none;
+    background-color: var(--cg-yellow);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--cg-lighter-grey);
+    cursor: pointer;
 }
 
 converse-root>converse-fontawesome {

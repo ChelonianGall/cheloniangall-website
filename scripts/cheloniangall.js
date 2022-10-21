@@ -217,7 +217,3 @@ document.addEventListener("DOMContentLoaded",
         return true;
     }
 );
-
-/*
-- Chat behaviour.
-*/
