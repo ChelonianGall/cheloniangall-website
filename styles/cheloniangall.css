@@ -319,11 +319,6 @@ html>body>#right-column>#account_form>#switch_to_sign_up>button:hover {
     color: var(--cg-shaded-yellow);
 }
 
-/*
-- Emotes highlighting?
-- Closing one tab closes all the tabs on its right.
-*/
-
 converse-root {
 
     display: block;
