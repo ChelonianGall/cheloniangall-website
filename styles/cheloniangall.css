@@ -321,9 +321,7 @@ html>body>#right-column>#account_form>#switch_to_sign_up>button:hover {
 
 /*
 - Room configuration
-- Moderation
 - Emotes highlighting?
-- Gap when no reduced chats.
 - Closing one tab closes all the tabs on its right.
 */
 
@@ -349,8 +347,12 @@ converse-root>converse-chats>converse-minimized-chats {
     display: block;
     margin: 10px;
     margin-bottom: 0;
-    padding-bottom: 10px;
     overflow-x: scroll;
+}
+
+converse-root>converse-chats>converse-minimized-chats>#minimized-chats {
+
+    margin-bottom: 10px;
 }
 
 converse-root>converse-chats>converse-minimized-chats>#minimized-chats>#toggle-minimized-chats {
@@ -2895,7 +2897,7 @@ converse-root>#converse-modals>#muc-invite-modal>.modal-dialog>.modal-content>.m
 converse-root>#converse-modals>#muc-invite-modal>.modal-dialog>.modal-content>.modal-body>.suggestion-box>form>.form-group>textarea {
 
     display: block;
-    width: 250px;
+    width: 258px;
     height: 38px !important;
     margin: 5px 0 0 0;
     padding: 10px;
