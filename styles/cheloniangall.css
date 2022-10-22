@@ -773,6 +773,7 @@ converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-panes>.cont
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    gap: 5px;
     height: 100%;
 }
 
@@ -782,6 +783,7 @@ converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-panes>.cont
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    height: 22px;
 }
 
 converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-panes>.controlbox-pane>#converse-roster>converse-roster>.controlbox-padded>.controlbox-heading--contacts {
@@ -814,13 +816,17 @@ converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-panes>.cont
     animation-duration: 0.7s;
 }
 
+converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-panes>.controlbox-pane>#converse-roster>converse-roster>converse-roster-filter {
+
+    height: 32px;
+}
+
 converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-panes>.controlbox-pane>#converse-roster>converse-roster>converse-roster-filter>.roster-filter-form>.form-inline {
 
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-top: 10px;
 }
 
 converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-panes>.controlbox-pane>#converse-roster>converse-roster>converse-roster-filter>.roster-filter-form>.form-inline>.filter-by {
@@ -884,9 +890,11 @@ converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-panes>.cont
 
 converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-panes>.controlbox-pane>#converse-roster>converse-roster>.roster-contacts {
 
-    display: block;
-    padding-top: 5px;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    flex-grow: 3;
+    overflow: auto;
 }
 
 converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-panes>.controlbox-pane>#converse-roster>converse-roster>.roster-contacts>.roster-group {
@@ -894,9 +902,7 @@ converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-panes>.cont
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    height: 100%;
     padding: 5px;
-    overflow: hidden;
     background-color: var(--cg-light-grey);
 }
 
@@ -928,11 +934,9 @@ converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-panes>.cont
 
 converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-panes>.controlbox-pane>#converse-roster>converse-roster>.roster-contacts>.roster-group>.roster-group-contacts {
 
-    flex: 1;
     display: block;
     margin: 0;
     padding: 0;
-    overflow: auto;
     list-style: none;
 }
 
@@ -963,6 +967,7 @@ converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-panes>.cont
 
 converse-root>converse-chats>converse-controlbox>.flyout>.controlbox-panes>.controlbox-pane>#converse-roster>converse-roster>.roster-contacts>.roster-group>.roster-group-contacts>.list-item>converse-roster-contact>.list-item-link>span:first-child>converse-avatar {
 
+    height: 30px;
     margin-right: 10px;
 }
 
