@@ -42,9 +42,18 @@
 <body>
     <div id = "left-column">
         <div id = "header">
-            <a href = "">
-                <img src = "images/title.png" alt = "ChelonianGall logo" id = "site_title"/>
-            </a>
+            <div id = "site_title">
+                <a href = "">
+                    <img src = "images/title.png" alt = "ChelonianGall logo"/>
+                </a>
+            </div>
+            <div id = "site_menu">
+                <!--
+                <a href = "/URI" class = "menu_item">
+                    ITEM
+                </a>
+                -->
+            </div>
         </div>
         <div id = "home">
             <img id = "turtle" src = "https://i.giphy.com/media/1qB3EwE3c54A/giphy.webp"/>
