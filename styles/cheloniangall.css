@@ -1849,14 +1849,6 @@ converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatar
     fill: var(--cg-yellow);
 }
 
-/*TEMPORARY*/
-converse-root>converse-chats>converse-chat>.flyout>.chat-body>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>button[title="Choose a file to send"],
-converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-chat-toolbar>.toolbar-buttons>button[title="Choose a file to send"] {
-
-    display: none;
-}
-/***********/
-
 converse-root>converse-chats>converse-chat>.flyout>.chat-body>.bottom-panel>converse-message-form,
 converse-root>converse-chats>converse-muc>.flyout>.chat-body>converse-muc-chatarea>.chat-area>.bottom-panel>converse-muc-message-form {
 
