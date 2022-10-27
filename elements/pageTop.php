@@ -48,10 +48,8 @@
                 </a>
             </div>
             <div id = "site_menu">
-                <!--
-                <a href = "/URI" class = "menu_item">
-                    ITEM
+                <a href = "/faq.php" class = "menu_item">
+                    FAQ
                 </a>
-                -->
             </div>
         </div>
