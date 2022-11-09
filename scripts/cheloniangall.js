@@ -146,7 +146,7 @@ converse.initialize({
     priority: 0,
     providers_link: 'https://xmpp.net/directory.php',
     assets_path: '/dist/',
-    persistent_store: 'localStorage',
+    persistent_store: 'IndexedDB',
     prune_messages_above: 50,
     pruning_behavior: 'unscrolled',
     push_app_servers: [],
