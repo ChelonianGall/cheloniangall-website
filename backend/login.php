@@ -20,6 +20,8 @@
     include 'functions/account.php';
     include 'functions/redirect.php';
 
+    ini_set('session.cookie_samesite', 'None');
+    ini_set('session.cookie_secure', 'true');
     session_start();
 
     $_SESSION["username"] = $_POST["username"];

@@ -17,6 +17,8 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
     */
 
+    ini_set('session.cookie_samesite', 'None');
+    ini_set('session.cookie_secure', 'true');
     session_start();
 
     if (isset($_SESSION['login']) && $_SESSION['login'] == 'valid') {

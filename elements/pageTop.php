@@ -16,7 +16,9 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
     */
-    
+
+    ini_set('session.cookie_samesite', 'None');
+    ini_set('session.cookie_secure', 'true');
     session_start();
 
     $loggedIn = isset($_SESSION['login']) && $_SESSION['login'] == 'valid';
