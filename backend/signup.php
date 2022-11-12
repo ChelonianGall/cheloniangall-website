@@ -19,10 +19,9 @@
 
     include 'functions/account.php';
     include 'functions/redirect.php';
+    include 'functions/session.php';
 
-    ini_set('session.cookie_samesite', 'None');
-    ini_set('session.cookie_secure', 'true');
-    session_start();
+    startSession();
 
     $_SESSION["username"] = $_POST["username"];
     $_SESSION["signup"] = createAccount($_POST["username"], $_POST["password"]);

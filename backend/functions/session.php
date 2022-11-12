@@ -17,14 +17,10 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
     */
 
-    include 'functions/redirect.php';
-    include 'functions/session.php';
-
-    startSession();
-
-    $_SESSION = array();
-
-    session_destroy();
-
-    redirect('/');
+    function startSession ()
+    {
+        ini_set('session.cookie_samesite', 'None');
+        ini_set('session.cookie_secure', 'true');
+        session_start(['cookie_lifetime' => 86400,]);
+    }
 ?>
