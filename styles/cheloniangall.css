@@ -315,6 +315,22 @@ html>body>#left-column>#faq>.question-category>.questions-list>.question>.answer
     padding: 5px;
 }
 
+html>body>#left-column>#faq>.question-category>.questions-list>.question>.answer>img {
+
+    max-width: 100%;
+}
+
+html>body>#left-column>#faq>.question-category>.questions-list>.question>.answer>p>a {
+
+    text-decoration: none;
+    color: var(--cg-yellow);
+}
+
+html>body>#left-column>#faq>.question-category>.questions-list>.question>.answer>p>a:hover {
+
+    color: var(--cg-shaded-yellow);
+}
+
 html>body>#left-column>#footer {
 
     width: 100%;

@@ -68,6 +68,26 @@
         </div>
     </details>
     <details class = "question-category">
+        <summary class = "category-name">Integration on CodinGame</summary>
+        <div class = "questions-list">
+            <details class = "question">
+                <summary class = "statement">How to add the ChelonianGall webchat to CodinGame?</summary>
+                <div class = "answer">
+                    <p>The ChelonianGall webchat for CodinGame takes the form of an user script.</p>
+                    <p>In order to use it, you first need to add a script management extension to your browser.</p>
+                    <p>The most used are <a href="https://www.tampermonkey.net/">Tampermonkey</a> and <a href="https://violentmonkey.github.io/">Violentmonkey</a>.<p>
+                    <p>At least one of them is supported by most of the modern browsers.</p>
+                    <p>Once the extension installed, follow that <a href="https://greasyfork.org/en/scripts/453839-cheloniangall">link</a> and click "Install this script".</p>
+                    <img src="images/faq-script-1.png"/>
+                    <p>In the window that shows up simply click on "Confirm the install". Note that the presentation and text may vary depending on your browser, extension and language.</p>
+                    <img src="images/faq-script-2.png"/>
+                    <p>Once this done, simply go on <a href="https://codingame.com">CodinGame</a> and you will see the ChelonianGall webchat on the right.</p>
+                    <img src="images/faq-script-3.png"/>
+                </div>
+            </details>
+        </div>
+    </details>
+    <details class = "question-category">
         <summary class = "category-name">Webchat</summary>
         <div class = "questions-list">
             <details class = "question">
